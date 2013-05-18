@@ -28,7 +28,7 @@ class Usuariocontrol extends Controlador{
     
      public function detalle($cod_usuario) {
         try {
-            $usuario = $this->modelo->leerUsuarioPorDocumento($cod_usuario);
+            $usuario = $this->modelo->leerUsuarioporcodigo($cod_usuario);
             if ($usuario != null) {
                 $this->vista->set('titulo', 'Datos de ' . $usuario->getNom_usuario());
                 $this->vista->set('usuario', $usuario);

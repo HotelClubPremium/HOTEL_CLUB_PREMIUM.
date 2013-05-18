@@ -24,7 +24,7 @@
             <tbody>
                 <?php foreach ($usuarios as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Usuario/detalles/<?php echo $user->getCod_usuario();?>">
+                    <td><a href="/HOTEL_CLUB_PREMIUM/usuario/detalle/<?php echo $user->getCod_usuario();?>">
                             <?php echo $user->getCod_usuario();?></a></td>
                     <td><?php echo $user->getNom_usuario();?></td>
                     <td><?php echo $user->getApe_usuario();?></td>
@@ -36,5 +36,7 @@
                 <?php } ?>
             </tbody>
     </table>
+        <br><br>
+        <a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nueva moto</a>
     </body>
 </html>

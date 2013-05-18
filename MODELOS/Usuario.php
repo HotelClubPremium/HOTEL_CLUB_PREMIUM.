@@ -71,7 +71,7 @@ public function getCod_usuario() {
     return $this->cod_usuario;
 }
 
-public function setCod_usuario(declaracion $cod_usuario) {
+public function setCod_usuario($cod_usuario) {
     $this->cod_usuario = $cod_usuario;
 }
 
@@ -122,13 +122,13 @@ public function setCorreo_electronico($correo_electronico) {
  */
 
     public function crearUsuarios(Usuario $user) {
-        $sql = "INSERT INTO test.usuario (cod_usuario, nom_usuario,ape_usuario, fecha_nacimiento,sex_usuario,correo_electronico) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario,ape_usuario, fecha_nacimiento,sex_usuario,correo_electronico) VALUES (?,?,?,?,?,?)";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerUsuarios() {
-        $sql = "SELECT cod_usuario, nom_usuario,ape_usuario, fecha_nacimiento,sex_usuario,correo_electronico FROM tes.usuario";
+        $sql = "SELECT cod_usuario, nom_usuario,ape_usuario, fecha_nacimiento,sex_usuario,correo_electronico FROM usuario";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $usuarios = array();

@@ -10,6 +10,8 @@ function cargadorClases(){
     include './config/Db.php';
     include './MODELOS/Modelo.php';
     include './MODELOS/Usuarios.php';
+    include './MODELOS/Habitacion.php';
+    
 }
 
 spl_autoload_register(cargadorClases);

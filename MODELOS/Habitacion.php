@@ -38,12 +38,12 @@ class Habitacion  extends Modelo {
        
     }
 
-      private function getParametros(Habitacion $habitaciones) {
+      private function getParametros(Habitacion $habitacion) {
         $parametros = array(
-            ':num_habitacion' => $habitaciones->getNum_habitacion(),
-            ':tipo' => $habitaciones->getTipo(),
-            ':precio' => $habitaciones->getPrecio(),
-            ':disponibilidad' => $habitaciones->getDisponibilidad(), 
+            ':num_habitacion' => $habitacion->getNum_habitacion(),
+            ':tipo' => $habitacion->getTipo(),
+            ':precio' => $habitacion->getPrecio(),
+            ':disponibilidad' => $habitacion->getDisponibilidad(), 
             
         );
         return $parametros;
@@ -90,7 +90,7 @@ class Habitacion  extends Modelo {
     }
 
     public function leerHabitacion() {
-        $sql = "SELECT num_habitacion,tipo,precio,disponibilidad FROM test.habitacion";
+        $sql = "SELECT num_habitacion,tipo,precio,disponibilidad FROM habitacion";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $habitaciones = array();
@@ -106,7 +106,7 @@ class Habitacion  extends Modelo {
         //TODO: Mejorar esta forma!!!
         $habitaciones = $this->leerHabitacion();
         foreach ($habitaciones   as $habitacion) {
-            if ($habitacion->getCod_usuario() == $num_habitacion)
+            if ($habitacion->getNum_habitacion() == $num_habitacion)
                 return $habitacion;
         }
         return null;

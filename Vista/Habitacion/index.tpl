@@ -21,13 +21,13 @@
                 </tr>
           </thead>
             <tbody>
-                <?php foreach ($usuarios as $user) { ?>
+                <?php foreach ($habitacion as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Habitacion/detalles/<?php echo $user->getnum_habitacion();?>">
+                    <td><a href="/HOTEL_CLUB_PREMIUM/Habitacion/detalle/<?php echo $user->getnum_habitacion();?>">
                             <?php echo $user->getnum_habitacion();?></a></td>
                     <td><?php echo $user->gettipo();?></td>
                     <td><?php echo $user->getprecio();?></td>
-                    <td><?php echo $user->getdisponiblidad();?></td>
+                    <td><?php echo $user->getdisponibilidad();?></td>
                     
                     
                 </tr>

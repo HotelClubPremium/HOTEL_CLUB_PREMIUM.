@@ -19,7 +19,7 @@ class Habitacioncontrol extends Controlador  {
 
     public function index() {
         try {
-            $datos = $this->modelo->leerhabitacion();
+            $datos = $this->modelo->leerHabitacion();
             $this->vista->set('habitacion', $datos);
             $this->vista->set('titulo', 'Lista de habitacion');
             return $this->vista->imprimir();
@@ -31,14 +31,14 @@ class Habitacioncontrol extends Controlador  {
     
   public function detalle($num_habitacion) {
         try {
-            $habitaciones = $this->modelo->leerUsuarioPorDocumento($num_habitacion);
-            if ($habitaciones != null) {
-                $this->vista->set('titulo', 'Datos de ' . $habitaciones->getTipo());
-                $this->vista->set('moto', $habitaciones);
+            $habitacion = $this->modelo->leerHabitacionporcodigo($num_habitacion);
+            if ($habitacion != null) {
+                $this->vista->set('titulo', 'Datos de ' . $habitacion->getTipo());
+                $this->vista->set('habitacion', $habitacion);
             } else {
                 //TODO: Esto se puede mejorar redireccionando a una pagina de error
                 $this->vista->set('titulo', 'Usuario no existe');
-                $this->vista->set('habitaciones', $habitaciones);
+                $this->vista->set('habitacion', $habitacion);
             }
             return $this->vista->imprimir();
         } catch (Exception $exc) {

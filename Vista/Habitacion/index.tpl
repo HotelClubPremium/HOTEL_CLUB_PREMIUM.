@@ -23,16 +23,18 @@
             <tbody>
                 <?php foreach ($habitacion as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Habitacion/detalle/<?php echo $user->getnum_habitacion();?>">
-                            <?php echo $user->getnum_habitacion();?></a></td>
-                    <td><?php echo $user->gettipo();?></td>
-                    <td><?php echo $user->getprecio();?></td>
-                    <td><?php echo $user->getdisponibilidad();?></td>
+                    <td><a href="/HOTEL_CLUB_PREMIUM/Habitacion/detalle/<?php echo $user->getNum_habitacion();?>">
+                            <?php echo $user->getNum_habitacion();?></a></td>
+                    <td><?php echo $user->getTipo();?></td>
+                    <td><?php echo $user->getPrecio();?></td>
+                    <td><?php echo $user->getDisponibilidad();?></td>
                     
                     
                 </tr>
                 <?php } ?>
             </tbody>
     </table>
+        <br><br>
+        <a href="/HOTEL_CLUB_PREMIUM/Habitacion/agregar">Nueva habitacion</a>
     </body>
 </html>

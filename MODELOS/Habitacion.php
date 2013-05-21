@@ -84,7 +84,13 @@ class Habitacion  extends Modelo {
 
     
    public function crearHabitacion(Habitacion $user) {
-        $sql = "INSERT INTO habitacion (num_habitacion,tipo,precio,disponibilidad) VALUES (?, ?, ?, ?)";
+       
+        $num_habitacion= $user->getNum_habitacion();
+        $tipo= $user->getTipo();
+        $precio= $user->getPrecio();
+        $disponibilidad= $user->getDisponibilidad();
+        
+        $sql = "INSERT INTO habitacion (num_habitacion,tipo,precio,disponibilidad) VALUES ('$num_habitacion','$tipo','$precio','$disponibilidad')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }

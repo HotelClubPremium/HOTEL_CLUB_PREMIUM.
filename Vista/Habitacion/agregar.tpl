@@ -15,7 +15,7 @@
             <table width="416" border="1" cellspacing="0" cellpadding="2">
                 <tr>
                     <th width="197" scope="row">Numhabitacion</th>
-                    <td width="211"><input name="numhabitacion" id="numhabitacion" type="text" onkeypress="return solonumeros(event)" /></td>
+                    <td width="211"><input name="num_habitacion" id="num_habitacion" type="text" onkeypress="return solonumeros(event)" /></td>
                 </tr>
                 <tr>
                     <th scope="row">Tipo</th>

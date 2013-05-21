@@ -120,20 +120,20 @@ class Habitacion  extends Modelo {
 
    
       public function actualizarHabitacion(habitacion $user) {
-        $num_habitacion= $user->getNom_usuario();
+        $num_habitacion= $user->getNum_habitacion();
         $tipo= $user->getTipo();
         $precio= $user->getPrecio();
         $disponibilidad= $user->getDisponibilidad();
         
        
-        $sql = "UPDATE test.habitacion SET num_habitacion=$num_habitacion,tipo='$tipo',precio='$precio',disponibilidad='$disponibilidad' WHERE num_habitacion=num_habitacion";
+        $sql = "UPDATE habitacion SET num_habitacion=$num_habitacion,tipo='$tipo',precio='$precio',disponibilidad='$disponibilidad' WHERE num_habitacion=$num_habitacion";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
    
        public function eliminarhabitacion(habitacion $user) {
         $num_habitacion= $user->getNum_habitacion();
-       $sql = "DELETE test.habitacion where num_habitacion=$num_habitacion";
+       $sql = "DELETE habitacion WHERE num_habitacion='$num_habitacion'";
         $this->__setSql($sql);
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));

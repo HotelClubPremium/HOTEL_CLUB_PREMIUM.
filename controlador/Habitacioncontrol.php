@@ -96,13 +96,13 @@ class Habitacioncontrol extends Controlador  {
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
             
-                $habitaciones = new Habitaciones();
+                $habitacion = new Habitacion();
                
-                $habitaciones->setTipo($tipo);
-                $habitaciones->setPrecio($precio);
-                $habitaciones->setDisponibilidad($disponibilidad);
-                $habitaciones->setNum_habitacion($num_habitacion);
-                $habitaciones->actualizarHabitacion($habitaciones);
+                $habitacion->setTipo($tipo);
+                $habitacion->setPrecio($precio);
+                $habitacion->setDisponibilidad($disponibilidad);
+                $habitacion->setNum_habitacion($num_habitacion);
+                $habitacion->actualizarHabitacion($habitacion);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             
@@ -117,13 +117,13 @@ class Habitacioncontrol extends Controlador  {
             $disponibilidad = isset($_POST['disponibilidad']) ? $_POST['disponibilidad'] : NULL;
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
-                $habitaciones = new Habitaciones();
+                $habitacion = new Habitacion();
                
-                $habitaciones->setTipo($tipo);
-                $habitaciones->setPrecio($precio);
-                $habitaciones->setDisponibilidad($disponibilidad);
-                $habitaciones->setNum_habitacion($num_habitacion);
-                $habitaciones->eliminarHabitacion($habitaciones);
+                $habitacion->setTipo($tipo);
+                $habitacion->setPrecio($precio);
+                $habitacion->setDisponibilidad($disponibilidad);
+                $habitacion->setNum_habitacion($num_habitacion);
+                $habitacion->eliminarHabitacion($habitacion);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha eliminado la informacion de manera satisfactoria');
             

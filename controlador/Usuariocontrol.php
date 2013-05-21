@@ -48,10 +48,10 @@ class Usuariocontrol extends Controlador{
         return $this->vista->imprimir();
     }
     
-    public function guardar() {
+public function guardar() {
         
         
-        if (isset($_POST['agregarusuario'])) {
+        if (isset($_POST['agregarUsuario'])) {
 
             $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
             $nom_usuario = isset($_POST['nom_usuario']) ? $_POST['nom_usuario'] : NULL;
@@ -62,14 +62,13 @@ class Usuariocontrol extends Controlador{
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
             try {
                 $usuario = new Usuario();
+                $usuario->setCod_usuario($cod_usuario);
                 $usuario->setNom_usuario($nom_usuario);
                 $usuario->setApe_usuario($ape_usuario);
-                $usuario->setFecha_nacimiento($fecha_nacimiento);
+                $usuario->setFecha_nacimiento($usuario->crearFecha($fecha_nacimiento));
                 $usuario->setSex_usuario($sex_usuario);
                 $usuario->setCorreo_electronico($correo_electronico);
-                
-                $usuario->setCod_usuario($cod_usuario);
-                $usuario->crearUsuario($usuario);
+                $usuario->crearUsuarios($usuario);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
             } catch (Exception $ex) {
@@ -89,7 +88,7 @@ class Usuariocontrol extends Controlador{
     
       public function modificaryeliminar() {
         
-         if (isset($_POST['modificarusuario'])) {
+         if (isset($_POST['ModificarUsuarios'])) {
 
             $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
             $nom_usuario = isset($_POST['nom_usuario']) ? $_POST['nom_usuario'] : NULL;
@@ -108,14 +107,14 @@ class Usuariocontrol extends Controlador{
                 $usuario->setCorreo_electronico($correo_electronico);
                 
                 $usuario->setCod_usuario($cod_usuario);
-                $usuario->actualizarUsuario($usuario);
+                $usuario->actualizarUsuarios($usuario);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             
             return $this->vista->imprimir();
         }
         
-      if (isset($_POST['eliminarusuario'])) {
+      if (isset($_POST['EliminarUsuarios'])) {
 
             $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
             $nom_usuario = isset($_POST['nom_usuario']) ? $_POST['nom_usuario'] : NULL;
@@ -134,14 +133,14 @@ class Usuariocontrol extends Controlador{
                 $usuario->setCorreo_electronico($correo_electronico);
                 
                 $usuario->setCod_usuario($cod_usuario);
-                $usuario->eliminarUsuario($usuario);
+                $usuario->eliminarusuarios($usuario);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha eliminado la informacion de manera satisfactoria');
             
             return $this->vista->imprimir();
         }
     } 
-    
+        
     
     
     

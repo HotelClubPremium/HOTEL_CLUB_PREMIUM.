@@ -22,7 +22,7 @@ class Servicio  extends Modelo{
         
     }
     
-      private function mapeaServicios(Servicio $user, array $props) {
+      private function mapearServicios(Servicio $user, array $props) {
         if (array_key_exists('cod_servicio', $props)) {
             $user->setCod_servicio($props['cod_servicio']);
         }
@@ -83,13 +83,18 @@ class Servicio  extends Modelo{
     }
 
          public function crearServicios(Servicio $user) {
-        $sql = "INSERT INTO test.servicios (cod_servicio,nombre,precio,horario_disponible) VALUES (?,?,?,?)";
+             
+        $cod_servicio= $user->getCod_servicio();
+        $nombre= $user->getNombre();
+        $precio= $user->getPrecio();
+        $horario_disponible= $user->getHorario_disponible();
+        $sql = "INSERT INTO servicios (cod_servicio,nombre,precio,horario_disponible) VALUES ('$cod_servicio','$nombre','$precio','$horario_disponible')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerServicios() {
-        $sql = "SELECT cod_servicio,nombre,precio,horario_disponible FROM test.servicios";
+        $sql = "SELECT cod_servicio,nombre,precio,horario_disponible FROM servicios";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $servicios = array();
@@ -118,7 +123,7 @@ class Servicio  extends Modelo{
         $precio = $user->getPrecio();
           $horario_disponible = $user->getHorario_disponible();
        
-     $sql = "UPDATE test.servicios SET cod_servicio=$cod_servicio,nombre=$nombre,precio='$precio',horario_disponible='$horario_disponible' WHERE cod_servicio=$cod_servicio";
+     $sql = "UPDATE servicios SET nombre='$nombre',precio='$precio',horario_disponible='$horario_disponible' WHERE cod_servicio='$cod_servicio'";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
         
@@ -127,7 +132,7 @@ class Servicio  extends Modelo{
    
        public function eliminarservicios(Servicio $user) {
         $cod_servicio = $user->getCod_servicio();
-        $sql = "DELETE test.servicios where cod_servicio=$cod_servicio";
+        $sql = "DELETE FROM servicios where cod_servicio=$cod_servicio";
         $this->__setSql($sql);
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));

@@ -21,18 +21,20 @@
                 </tr>
           </thead>
             <tbody>
-                <?php foreach ($usuarios as $user) { ?>
+                <?php foreach ($servicios as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Servicios/detalles/<?php echo $user->getcod_servicio();?>">
-                            <?php echo $user->getcod_servicio();?></a></td>
-                    <td><?php echo $user->getnombre();?></td>
-                    <td><?php echo $user->getprecio();?></td>
-                    <td><?php echo $user->gethorario_disponible();?></td>
+                    <td><a href="/HOTEL_CLUB_PREMIUM/servicio/detalle/<?php echo $user->getCod_servicio();?>">
+                            <?php echo $user->getCod_servicio();?></a></td>
+                    <td><?php echo $user->getNombre();?></td>
+                    <td><?php echo $user->getPrecio();?></td>
+                    <td><?php echo $user->getHorario_disponible();?></td>
                     
                     
                 </tr>
                 <?php } ?>
             </tbody>
     </table>
+         <br><br>
+        <a href="/HOTEL_CLUB_PREMIUM/servicio/agregar">Nuevo servicios </a>
     </body>
 </html>

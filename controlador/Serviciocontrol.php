@@ -6,7 +6,7 @@
  * Clase para manejar los controladores en la aplicacion
  * @author MELLADO
  */
-class Servicioscontrol extends Controlador{
+class Serviciocontrol extends Controlador{
     //put your code here
     
      public function __construct($modelo, $accion) {
@@ -27,7 +27,7 @@ class Servicioscontrol extends Controlador{
     
      public function detalle($cod_servicio) {
         try {
-            $servicios = $this->modelo->leerUsuarioPorDocumento($cod_servicio);
+            $servicios = $this->modelo->leerServiciosporcodigo($cod_servicio);
             if ($servicios != null) {
                 $this->vista->set('titulo', 'Datos de ' . $servicios->getNombre());
                 $this->vista->set('servicios', $servicios);
@@ -59,7 +59,7 @@ class Servicioscontrol extends Controlador{
             $horario_disponible = isset($_POST['horario_disponible']) ? $_POST['horario_disponible'] : NULL;
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
             try {
-                $servicios = new Servicios();
+                $servicios = new Servicio();
                 $servicios->setNombre($nombre);
                 $servicios->setPrecio($precio);
                 $servicios->setHorario_disponible($horario_disponible);
@@ -90,7 +90,7 @@ class Servicioscontrol extends Controlador{
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
             
-                $servicios = new Servicios();
+                $servicios = new Servicio();
                 $servicios->setNombre($nombre);
                 $servicios->setPrecio($precio);
                 $servicios->setHorario_disponible($horario_disponible);
@@ -111,7 +111,7 @@ class Servicioscontrol extends Controlador{
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
             
-                $servicios = new Servicios();
+                $servicios = new Servicio();
                 $servicios->setNombre($nombre);
                 $servicios->setPrecio($precio);
                 $servicios->setHorario_disponible($horario_disponible);

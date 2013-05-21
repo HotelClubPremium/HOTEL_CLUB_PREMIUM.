@@ -27,7 +27,7 @@ abstract class Modelo {
         throw new Exception('Error de B.D: ' . $infoE[0]);
     }
 
-    protected static function crearFecha($entrada){
+      public static function crearFecha($entrada) {
         return DateTime::createFromFormat('Y-m-d', $entrada);
     }
 
@@ -84,8 +84,8 @@ abstract class Modelo {
         }
     }
     
-    protected static function formatearFecha(DateTime $fecha){
-        return $fecha->format(DateTime::ISO8601);
+    protected static function formatearFecha(Date $fecha, $formato='Y-m-d') {
+        return empty($formato) ? $fecha->format(DateTime::ISO8601) : $fecha->format($formato);
     }
 }
 ?>

@@ -37,6 +37,6 @@
             </tbody>
     </table>
         <br><br>
-        <a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nueva moto</a>
+        <a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nuevo Usuarios</a>
     </body>
 </html>

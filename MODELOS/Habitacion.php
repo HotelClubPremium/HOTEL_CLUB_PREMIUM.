@@ -132,11 +132,18 @@ class Habitacion  extends Modelo {
     }
    
        public function eliminarhabitacion(habitacion $user) {
-        $num_habitacion= $user->getNum_habitacion();
+     /*   $num_habitacion= $user->getNum_habitacion();
        $sql = "DELETE habitacion WHERE num_habitacion='$num_habitacion'";
         $this->__setSql($sql);
         $this->__setSql($sql);
-        $this->ejecutar($this->getParametros($user));
+        $this->ejecutar($this->getParametros($user));*/
+        $num_habitacion= $user->getNum_habitacion();  
+        $sql = "DELETE FROM habitacion WHERE num_habitacion= $num_habitacion";
+        $this->__setSql($sql);
+        $param = array(':num_habitacion' => $user->getNum_habitacion());
+        $this->ejecutar($param); 
+           
+           
     }
     
     

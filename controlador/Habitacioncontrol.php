@@ -63,13 +63,13 @@ class Habitacioncontrol extends Controlador  {
             $disponibilidad = isset($_POST['disponibilidad']) ? $_POST['disponibilidad'] : NULL;
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
             try {
-                $habitaciones = new Habitaciones();
+                $habitacion = new Habitacion();
                
-                $habitaciones->setTipo($tipo);
-                $habitaciones->setPrecio($precio);
-                $habitaciones->setDisponibilidad($disponibilidad);
-                $habitaciones->setNum_habitacion($num_habitacion);
-                $habitaciones->crearHabitacion($habitaciones);
+                $habitacion->setTipo($tipo);
+                $habitacion->setPrecio($precio);
+                $habitacion->setDisponibilidad($disponibilidad);
+                $habitacion->setNum_habitacion($num_habitacion);
+                $habitacion->crearHabitacion($habitacion);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
             } catch (Exception $ex) {

@@ -10,9 +10,9 @@
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
         </p>
        
-<h2>DETALLE DE servicios</h2>
+<h2 align="center">DETALLE DE servicios</h2>
 <form action="/HOTEL_CLUB_PREMIUM/servicio/modificaryeliminar" method="post" name="form1" onsubmit="return CamposVacios()" >
-<table width="416" border="1" cellspacing="0" cellpadding="2">
+<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
   <tr>
     <th width="197" scope="row">Numero Del servicio</th>
       <td><input name="cod_servicio" id="cod_servicio" type="text" onkeypress="return solonumeros(event)" readonly value = <?php echo $servicios->getCod_servicio();?> /></td>

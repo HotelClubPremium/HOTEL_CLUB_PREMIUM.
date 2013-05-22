@@ -6,11 +6,18 @@
         <title><?php echo $titulo; ?></title>
     </head>
     <body>
-        <p>
+      
+        <div id="recuadro">
+	<div id="page-recuadro">
+		<div id="page">
+			
+				<div>
+                                      <p>
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
         </p>
-        <h2>RESERVAS</h2>
-        <table border="1" width="500" cellspacing="0" cellpadding="0">
+        <BR> <BR><BR>
+        <h2 align="center">HABITACIONES </h2>
+        <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
             <thead>
                 <tr>
                     <th>Numero de Habitacion</th>
@@ -35,6 +42,14 @@
             </tbody>
     </table>
         <br><br>
-        <a href="/HOTEL_CLUB_PREMIUM/Habitacion/agregar">Nueva habitacion</a>
+       
+        
+			<p id="button-style" align="center"><a href="/HOTEL_CLUB_PREMIUM/Habitacion/agregar">NUEVA HABITACION</a></p>
+				</div>
+			
+		</div>
+	</div>
+	
+</div>
     </body>
 </html>

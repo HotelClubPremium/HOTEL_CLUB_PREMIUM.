@@ -9,9 +9,9 @@
 <p>
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
         </p>
-<h2>DETALLE DE FACTURACION</h2>
+<h2 align="center">DETALLE DE FACTURACION</h2>
 <form action="/HOTEL_CLUB_PREMIUM/Facturacion/modificaryeliminar" method="post" name="form1" onsubmit="return CamposVacios()" >
-<table width="416" border="1" cellspacing="0" cellpadding="2">
+<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
   <tr>
     <th width="197" scope="row">Numero De checkout</th>
   

@@ -2,16 +2,22 @@
 
 <html lang="en">
     <head>
+        <link href="default.css" rel="stylesheet" type="text/css" media="all" />
         <meta charset="utf-8" />
         <title><?php echo $titulo; ?></title>
     </head>
 <body>
-<p>
+    
+    <div id="recuadro">
+	<div id="page-recuadro">
+		<div id="page">
+                    <p>
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
         </p>
-<h2>DETALLE DE USUARIO</h2>
+<h2 align="center">DETALLE DE USUARIO</h2>
 <form action="/HOTEL_CLUB_PREMIUM/Usuario/modificaryeliminar" method="post" name="formulario2">
-<table width="416" border="1" cellspacing="0" cellpadding="2">
+    
+<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
  
   
                 <tr>
@@ -44,10 +50,25 @@
   <tr>
    <td colspan="2"><input name="ModificarUsuarios" id="ModificarUsuarios" type="submit" value="Modificar"  /></td>
    <td colspan="2"><input name="EliminarUsuarios" id="EliminarUsuarios" type="submit" value="Eliminar" /></td>
+   
     </tr>
+   
 </table>
 <p>&nbsp;</p>
 </form>
+			
+				
+                                    
+                                    
+					
+					
+				
+			
+		</div>
+	</div>
+	
+</div>
+
 </body>
 
 </html>

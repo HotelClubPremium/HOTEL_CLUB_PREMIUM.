@@ -6,11 +6,17 @@
         <title><?php echo $titulo; ?></title>
     </head>
     <body>
-        <p>
+      
+        <div id="recuadro">
+	<div id="page-recuadro">
+		<div id="page">
+			
+				<div>
+                                      <p>
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
         </p>
-        <h2>SERVICIOS</h2>
-        <table border="1" width="500" cellspacing="0" cellpadding="0">
+        <h2 align="center">SERVICIOS</h2>
+        <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
             <thead>
                 <tr>
                     <th>Codigo de servicio</th>
@@ -35,6 +41,14 @@
             </tbody>
     </table>
          <br><br>
-        <a href="/HOTEL_CLUB_PREMIUM/servicio/agregar">Nuevo servicios </a>
+       
+					
+					<p id="button-style" align="center"><a href="/HOTEL_CLUB_PREMIUM/servicio/agregar">NUEVO SERVICIOS</a></p>
+				</div>
+			
+		</div>
+	</div>
+	
+</div>
     </body>
 </html>

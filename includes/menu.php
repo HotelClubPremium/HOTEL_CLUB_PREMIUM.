@@ -4,6 +4,7 @@
         <li><a href="/HOTEL_CLUB_PREMIUM/usuario/index">Usuarios</a></li>
         <li><a href="/HOTEL_CLUB_PREMIUM/Habitacion/index">Habitacion</a></li>
          <li><a href="/HOTEL_CLUB_PREMIUM/servicio/index"> Servicios del Hotel</a></li>
+         <li><a href="/HOTEL_CLUB_PREMIUM/Facturacion/index">Facturacion</a></li>
         <li><a href="/HOTEL_CLUB_PREMIUM/articulo/index">Art&iacute;culo</a></li>
     </ul>
 </nav>

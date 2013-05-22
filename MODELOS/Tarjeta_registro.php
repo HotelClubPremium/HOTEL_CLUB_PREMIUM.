@@ -45,13 +45,13 @@ class Tarjeta_registro extends Modelo {
        
     }
     
-         private function getParametros(Tarjeta_registro $tarjeta_registros) {
+        private function getParametros(Tarjeta_registro $tarjeta_registro) {
         $parametros = array(
-            ':codigo_cliente' => $tarjeta_registros->getCodigo_cliente(),
-            ':numero_servicio' => $tarjeta_registros->getNumero_servicio(),
-            ':total' => $tarjeta_registros->getTotal(),
-            ':fecha_servicio' => $tarjeta_registros->getFecha_servicio(), 
-            
+            ':num_CheckIn' => $tarjeta_registro->getNum_CheckIn(),
+            ':codigo_cliente' => $tarjeta_registro->getCodigo_cliente(),
+            ':numero_servicio' => $tarjeta_registro->getNumero_servicio(),
+            ':total' => $tarjeta_registro->getTotal(),
+            ':fecha_servicio' => $tarjeta_registro->getFecha_servicio(), 
         );
         return $parametros;
     }
@@ -97,22 +97,28 @@ class Tarjeta_registro extends Modelo {
     }
 
  public function crearTarjeta_registro(Tarjeta_registro $user) {
-        $sql = "INSERT INTO test.tarjeta_registro (num_CheckIn,codigo_cliente,numero_servicio,total,fecha_servicio) VALUES (?,?,?,?,?)";
+        $num_CheckIn= $user->getNum_CheckIn();
+        $codigo_cliente= $user->getCodigo_cliente();
+        $numero_servicio= $user->getNumero_servicio();
+        $total= $user->getTotal();
+        $fecha_servicio= $user->getFecha_servicio();
+        
+        $sql = "INSERT INTO tarjeta_registro (num_CheckIn,codigo_cliente,numero_servicio,total,fecha_servicio) VALUES ('$num_CheckIn','$codigo_cliente','$numero_servicio','$total','".$fecha_servicio."')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerTarjeta_registro() {
-        $sql = "SELECT num_CheckIn,codigo_cliente,numero_servicio,total,fecha_servicio FROM test.tarjeta_registro";
+        $sql = "SELECT num_CheckIn,codigo_cliente,numero_servicio,total,fecha_servicio FROM tarjeta_registro";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
-        $usuarios = array();
+        $tarjeta_registros = array();
         foreach ($resultado as $fila) {
             $user = new Tarjeta_registro();
             $this->mapearTarjeta_registro($user, $fila);
-            $usuarios[$user->getTarjeta_registro()] = $user;
+            $tarjeta_registros[$user->getNum_CheckIn()] = $user;
         }
-        return $usuarios;
+        return $tarjeta_registros;
     }
     
      
@@ -134,19 +140,20 @@ class Tarjeta_registro extends Modelo {
         $total = $user->getTotal();
         $fecha_servicio = $user->getFecha_servicio ();
  
-       $sql = "UPDATE test.tarjeta_registro SET num_CheckIn,=$num_CheckIn,codigo_cliente='$codigo_cliente',numero_servicio='$numero_servicio',total='$total',fecha_servicio='$fecha_servicio' WHERE codigo_cliente=$codigo_cliente";
+       $sql = "UPDATE tarjeta_registro SET codigo_cliente='$codigo_cliente',numero_servicio='$numero_servicio',total='$total',fecha_servicio='$fecha_servicio' WHERE num_CheckIn='$num_CheckIn'";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
         
     }
    
        public function eliminartarjeta_registro(Tarjeta_registro $user) {
-        $codigo_cliente= $user->getCodigo_cliente();
-         $sql = "DELETE test.tarjeta_registro where codigo_cliente=$codigo_cliente";
+         $num_CheckIn= $user->getNum_CheckIn();
+         $sql = "DELETE FROM tarjeta_registro WHERE num_CheckIn=$num_CheckIn";
         $this->__setSql($sql);
-        $this->__setSql($sql);
-        $this->ejecutar($this->getParametros($user));
+        $param = array(':num_CheckIn' => $user->getNum_CheckIn());
+        $this->ejecutar($param); 
     } 
+   
 }
 
 ?>

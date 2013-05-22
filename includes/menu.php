@@ -22,6 +22,7 @@
 				<li><a href="/HOTEL_CLUB_PREMIUM/Habitacion/index" title="">HABITACIONES</a></li>
 				<li><a href="/HOTEL_CLUB_PREMIUM/servicio/index"  title="">SERVICIOS</a></li>
                                 <li><a href="/HOTEL_CLUB_PREMIUM/Facturacion/index"  title="">FACTURACION</a></li>
+                                  <li><a href="/HOTEL_CLUB_PREMIUM/Tarjeta_registro/index" title="">TarjetaRegistro</a></li>
 				
 			</ul>
 		</div>

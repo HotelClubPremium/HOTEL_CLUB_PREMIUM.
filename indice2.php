@@ -13,6 +13,7 @@ function cargadorClases(){
     include './MODELOS/Habitacion.php';
      include './MODELOS/Servicio.php';
       include './MODELOS/Facturacion.php';
+      include './MODELOS/Tarjeta_registro.php';
     
 }
 

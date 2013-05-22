@@ -54,7 +54,7 @@ class Usuario extends Modelo {
             ':cod_usuario' => $usuario->getCod_usuario(),
             ':nom_usuario' => $usuario->getNom_usuario(),
             ':ape_usuario' => $usuario->getApe_usuario(),
-            ':fecha_nacimiento' =>$this->formatearFecha($usuario->getFecha_nacimiento()),
+            ':fecha_nacimiento' =>$usuario->getFecha_nacimiento(),
             ':sex_usuario' => $usuario->getSex_usuario(),
             ':correo_electronico' => $usuario->getCorreo_electronico()
         );
@@ -125,11 +125,13 @@ public function setCorreo_electronico($correo_electronico) {
         $codigo=$user->getCod_usuario();
         $nombre=$user->getNom_usuario();
         $apellido = $user->getApe_usuario();
-        $fecha = $user->crearFecha($user->getFecha_nacimiento());
+        $fecha = $user->getFecha_nacimiento();
         $sexo = $user->getSex_usuario();
         $correo= $user->getCorreo_electronico();
-        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico) VALUES('$codigo','$nombre','$apellido','$fecha','$sexo','$correo')";
-         $this->__setSql($sql);
+        
+        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo')";
+        echo $sql;
+        $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 

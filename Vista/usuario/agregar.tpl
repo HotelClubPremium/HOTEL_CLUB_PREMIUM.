@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Fecha Nacimiento</th>
-                    <td><input   name="fecha_nacimiento" id="fecha_nacimiento" type="text"  />y-m-d</td>
+                    <td><input   name="fecha_nacimiento" id="fecha_nacimiento" type="date"  /></td>
                     
                 </tr>
                 <tr>

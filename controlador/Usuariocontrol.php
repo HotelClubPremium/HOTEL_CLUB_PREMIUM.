@@ -65,7 +65,7 @@ public function guardar() {
                 $usuario->setCod_usuario($cod_usuario);
                 $usuario->setNom_usuario($nom_usuario);
                 $usuario->setApe_usuario($ape_usuario);
-                $usuario->setFecha_nacimiento($usuario->crearFecha($fecha_nacimiento));
+                $usuario->setFecha_nacimiento($fecha_nacimiento);
                 $usuario->setSex_usuario($sex_usuario);
                 $usuario->setCorreo_electronico($correo_electronico);
                 $usuario->crearUsuarios($usuario);

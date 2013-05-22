@@ -1,0 +1,32 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(../imagenes/fondo.gif);
+	background-repeat: repeat;
+}
+
+
+#principal {
+	margin-right: auto;
+	margin-left: auto;
+	width: 900px;
+}
+
+#contenido {
+	background-color: #FFF;
+	padding: 10px;
+}
+#menu img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+
+#pie {
+	height: 80px;
+	background-image: url(../imagenes/pie_fondo.gif);
+	background-repeat: repeat-x;
+}

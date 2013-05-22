@@ -19,6 +19,7 @@ function cargadorClases(){
     require_once './controlador/Habitacioncontrol.php';
     require_once './controlador/Serviciocontrol.php';
     require_once './controlador/Facturacioncontrol.php';
+     require_once './controlador/Principalcontrol.php';
     
     require_once './vista/Vista.php';
 }

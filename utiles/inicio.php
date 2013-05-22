@@ -6,7 +6,7 @@
  *
  * @author Carlos
  */
-$controlador = "Usuario";
+$controlador = "Principal";
 $accion = "index";
 $consulta = null;
 

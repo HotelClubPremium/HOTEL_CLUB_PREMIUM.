@@ -1,0 +1,10 @@
+#texto h1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #00C;
+	font-style: normal;
+}
+#texto p {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height: 20px;
+}

@@ -129,12 +129,20 @@ class Reserva  extends Modelo {
 
     
    public function crearReservas(Reserva $user) {
-        $sql = "INSERT INTO test.reserva (num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar) VALUES (?,?,?,?,?,?,?)";
+        $num_reserva= $user->getNum_reserva();
+        $cod_usuario = $user->getCod_usuario();
+        $num_habitacion = $user->getNum_habitacion();
+        $dias_reserva = $user->getDias_reserva();
+        $fecha_inicio = $user->getFecha_inicio  ();
+        $fecha_reserva= $user->getFecha_reserva ();
+        $total_pagar = $user->getTotal_pagar ();
+        $sql = "INSERT INTO reserva (num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar) VALUES ('$num_reserva','$cod_usuario','$num_habitacion',$dias_reserva,'".$fecha_inicio."','".$fecha_reserva."',$total_pagar)";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerReservas() {
+        
         $sql = "SELECT num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar FROM test.reserva";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);

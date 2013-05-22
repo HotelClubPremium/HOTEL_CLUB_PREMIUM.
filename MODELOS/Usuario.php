@@ -130,7 +130,6 @@ public function setCorreo_electronico($correo_electronico) {
         $correo= $user->getCorreo_electronico();
         
         $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo')";
-        echo $sql;
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }

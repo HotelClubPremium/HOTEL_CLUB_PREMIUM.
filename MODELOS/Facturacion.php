@@ -44,16 +44,15 @@ class Facturacion   extends Modelo{
        
     }
 
-       private function getParametros(Facturacion $facturaciones) {
+      private function getParametros(Facturacion $facturacion) {
         $parametros = array(
-            ':numero_checkout' => $facturaciones->getNumero_checkout(),
-            ':codigo_cliente' => $facturaciones->getCodigo_cliente(),
-            ':numero_servicio' => $facturaciones->getNumero_servicio(),
-            ':facturacion_total' => $facturaciones->getFacturacion_total(),
+            ':numero_checkout' => $facturacion->getNumero_checkout(),
+            ':codigo_cliente' => $facturacion->getCodigo_cliente(),
+            ':numero_servicio' => $facturacion->getNumero_servicio(),
+            ':facturacion_total' => $facturacion->getFacturacion_total(),
               );
         return $parametros;
     }
-  
     public function getNumero_checkout() {
         return $this->numero_checkout;
     }
@@ -86,21 +85,26 @@ class Facturacion   extends Modelo{
         $this->facturacion_total = $facturacion_total;
     }
 
-    public function crearFacturacion(Facturacion $user) {
-        $sql = "INSERT INTO test.facturacion (numero_checkout,codigo_cliente,numero_servicio,facturacion_total) VALUES (?,?,?,?)";
+   public function crearFacturacion(Facturacion $user) {
+        $numero_checkout= $user->getNumero_checkout();
+        $codigo_cliente= $user->getCodigo_cliente();
+        $numero_servicio= $user->getNumero_servicio();
+        $facturacion_total= $user->getFacturacion_total();
+        
+        $sql = "INSERT INTO facturacion (numero_checkout,codigo_cliente,numero_servicio,facturacion_total) VALUES ('$numero_checkout','$codigo_cliente','$numero_servicio','$facturacion_total')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerFacturacion() {
-        $sql = "SELECT numero_checkout,codigo_cliente,numero_servicio,facturacion_total FROM test.facturacion";
+        $sql = "SELECT numero_checkout,codigo_cliente,numero_servicio,facturacion_total FROM facturacion";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $facturaciones = array();
         foreach ($resultado as $fila) {
             $user = new Facturacion();
             $this->mapearfacturacion($user, $fila);
-            $facturaciones[$user->getFacturacion()] = $user;
+            $facturaciones[$user->getNumero_checkout()] = $user;
         }
         return $facturaciones;
     }
@@ -127,7 +131,7 @@ class Facturacion   extends Modelo{
         $facturacion_total = $user->getFacturacion_total();
       
        
-          $sql = "UPDATE test.facturacion SET numero_checkout=$numero_checkout,codigo_cliente='$codigo_cliente',numero_servicio='$numero_servicio',facturacion_total='$facturacion_total' WHERE numero_checkout=$numero_checkout";
+          $sql = "UPDATE facturacion SET numero_checkout='$numero_checkout',codigo_cliente='$codigo_cliente',numero_servicio='$numero_servicio',facturacion_total='$facturacion_total' WHERE numero_checkout='$numero_checkout'";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));   
     }
@@ -135,10 +139,12 @@ class Facturacion   extends Modelo{
    
       public function eliminarFacturacion(Facturacion $user) {
         $numero_checkout = $user->getNumero_checkout();
-         $sql = "DELETE test.facturacion where numero_checkout=$numero_checkout";
+         $sql = "DELETE FROM facturacion WHERE numero_checkout=$numero_checkout";
         $this->__setSql($sql);
-        $this->__setSql($sql);
-        $this->ejecutar($this->getParametros($user));
+        $param = array(':numero_checkout' => $user->getNumero_checkout());
+        $this->ejecutar($param); 
+        
+           
     }
     
     

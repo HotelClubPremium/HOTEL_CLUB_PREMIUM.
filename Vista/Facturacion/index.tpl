@@ -14,26 +14,28 @@
             <thead>
                 <tr>
                    
-                    <th>Codigo Del Cliente</th>
-                    <th>Numero Del Servicio</th>
-                    <th>Total a Pagar</th>
-                    <th>Fecha De Servicio</th>
+                    <th>Numero del checkout</th>
+                    <th>Codigo del cliente</th>
+                    <th>Numero del servicio</th>
+                    <th>Facturacion total</th>
                     
                 </tr>
           </thead>
             <tbody>
-                <?php foreach ($usuarios as $user) { ?>
+                <?php foreach ($facturacion as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/TarjetaRegistro/detalles/<?php echo $user->getNum_CheckIn();?>">
-                            <?php echo $user->getNum_CheckIn();?></a></td>
-                    <td><?php echo $user->getcodigo_cliente();?></td>
-                    <td><?php echo $user->getnumero_servicio();?></td>
-                    <td><?php echo $user->gettotal();?></td>
-                    <td><?php echo $user->getfecha_servicio()->format('Y-m-d');?></td>
+                    <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>">
+                            <?php echo $user->getNumero_checkout();?></a></td>
+                    <td><?php echo $user->getCodigo_cliente();?></td>
+                    <td><?php echo $user->getNumero_servicio();?></td>
+                    <td><?php echo $user->getFacturacion_total();?></td>
+           
                                         
                 </tr>
                 <?php } ?>
             </tbody>
     </table>
+        <br><br>
+        <a href="/HOTEL_CLUB_PREMIUM/Facturacion/agregar">Nueva facturacion</a>
     </body>
 </html>

@@ -9,7 +9,7 @@
  */
 class Facturacioncontrol extends Controlador{
     //put your code here
-     public function __construct($modelo, $accion) {
+       public function __construct($modelo, $accion) {
         parent::__construct($modelo, $accion);
         $this->setModelo($modelo);
     }
@@ -29,14 +29,14 @@ class Facturacioncontrol extends Controlador{
     
       public function detalle($numero_checkout) {
         try {
-            $facturaciones = $this->modelo->leerUsuarioPorDocumento($numero_checkout);
-            if ($facturaciones != null) {
-                $this->vista->set('titulo', 'Datos de ' . $facturaciones->getCodigo_cliente());
-                $this->vista->set('facturaciones', $facturaciones);
+            $facturacion = $this->modelo->leerFacturacionporcodigo($numero_checkout);
+            if ($facturacion != null) {
+                $this->vista->set('titulo', 'Datos de ' . $facturacion->getCodigo_cliente());
+                $this->vista->set('facturacion', $facturacion);
             } else {
                 //TODO: Esto se puede mejorar redireccionando a una pagina de error
                 $this->vista->set('titulo', 'Usuario no existe');
-                $this->vista->set('facturaciones', $facturaciones);
+                $this->vista->set('facturacion', $facturacion);
             }
             return $this->vista->imprimir();
         } catch (Exception $exc) {
@@ -62,12 +62,12 @@ class Facturacioncontrol extends Controlador{
             $facturacion_total = isset($_POST['facturacion_total']) ? $_POST['facturacion_total'] : NULL;
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
             try {
-                $facturaciones = new Facturaciones();
-                $facturaciones->setCodigo_cliente($codigo_cliente);
-                $facturaciones->setNumero_servicio($numero_servicio);
-                $facturaciones->setFacturacion_total($facturacion_total);
-                $facturaciones->setNumero_checkout($numero_checkout);
-                $facturaciones->crearFacturacion($facturaciones);
+                $facturacion = new Facturacion();
+                $facturacion->setCodigo_cliente($codigo_cliente);
+                $facturacion->setNumero_servicio($numero_servicio);
+                $facturacion->setFacturacion_total($facturacion_total);
+                $facturacion->setNumero_checkout($numero_checkout);
+                $facturacion->crearFacturacion($facturacion);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
             } catch (Exception $ex) {
@@ -94,12 +94,12 @@ class Facturacioncontrol extends Controlador{
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
             
-                $facturaciones = new Facturaciones();
-                $facturaciones->setCodigo_cliente($codigo_cliente);
-                $facturaciones->setNumero_servicio($numero_servicio);
-                $facturaciones->setFacturacion_total($facturacion_total);
-                $facturaciones->setNumero_checkout($numero_checkout);
-                $facturaciones->actualizarFacturacion($facturaciones);
+                $facturacion = new Facturacion();
+                $facturacion->setCodigo_cliente($codigo_cliente);
+                $facturacion->setNumero_servicio($numero_servicio);
+                $facturacion->setFacturacion_total($facturacion_total);
+                $facturacion->setNumero_checkout($numero_checkout);
+                $facturacion->actualizarFacturacion($facturacion);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             
@@ -115,18 +115,23 @@ class Facturacioncontrol extends Controlador{
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
            
             
-                $facturaciones = new Facturaciones();
-                $facturaciones->setCodigo_cliente($codigo_cliente);
-                $facturaciones->setNumero_servicio($numero_servicio);
-                $facturaciones->setFacturacion_total($facturacion_total);
-                $facturaciones->setNumero_checkout($numero_checkout);
-                $facturaciones->eliminarFacturacion($facturaciones);
+                $facturacion = new Facturacion();
+                $facturacion->setCodigo_cliente($codigo_cliente);
+                $facturacion->setNumero_servicio($numero_servicio);
+                $facturacion->setFacturacion_total($facturacion_total);
+                $facturacion->setNumero_checkout($numero_checkout);
+                $facturacion->eliminarFacturacion($facturacion);
                 $this->vista->set('titulo', 'Datos eliminados');
                 $this->vista->set('mensaje', 'Se ha eliminado la informacion de manera satisfactoria');
             
             return $this->vista->imprimir();
         }
     } 
+    
+    
+    
+    
+    
     
     
     

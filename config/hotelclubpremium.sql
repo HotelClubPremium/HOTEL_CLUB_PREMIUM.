@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-05-2013 a las 05:16:02
+-- Tiempo de generación: 29-05-2013 a las 18:43:46
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -153,11 +153,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `nom_usuario`, `ape_usuario`, `fecha_nacimiento`, `sex_usuario`, `correo_electronico`, `clave`) VALUES
-('1', 'jeiner', 'mellado', '2013-04-29', 'm', 'jeiner@hotmail.com', '1'),
-('13', 'jjjjjjjj', 'jjjjjj', '2013-05-14', 'M', 'jeiner@hotmail.com', '13'),
-('2', 'carlos', 'aaaaaa', '2013-04-29', 'm', 'carlos@hotmail.com', '2'),
-('25', 'lau', 'lau', '2013-05-14', 'F', 'lau@hotmail.com', '25'),
-('3', 'miguel', 'nnnnn', '2013-04-29', 'm', 'miguel@hotmail.com', '3');
+('1', 'jeiner', 'mellado', '2013-05-21', 'M', 'je_in_er@homail.com', '356a192b7913b04c54574d18c28d46e6395428ab'),
+('2', 'carlos', 'pitre', '2013-05-23', 'M', 'carlos54@hotmail.com', 'da4b9237bacccdf19c0760cab7aec4a8359010b0'),
+('3', 'miguel', 'palomino', '2013-05-20', 'M', 'migule@hotmail.com', '77de68daecd823babbb58edb1c8e14d7106e83bb'),
+('79', 'lllll', 'llllll', '2013-05-20', 'M', 'lllll@hotmail.com', 'b74f5ee9461495ba5ca4c72a7108a23904c27a05');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

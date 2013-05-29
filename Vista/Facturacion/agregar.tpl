@@ -2,9 +2,11 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <title><?php echo $titulo; ?></title>
-       
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hotel Club Premium - Bienvenidos</title>
+<link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
+<link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+
     </head>
     <body>
         <p>
@@ -35,5 +37,8 @@
             </table>
         </form>
         <p>&nbsp;</p>
+        </div>
+  <div id="pie">hcp</div>
+</div>
     </body>
 </html>

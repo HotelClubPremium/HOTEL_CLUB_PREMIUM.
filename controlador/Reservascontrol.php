@@ -78,7 +78,7 @@ class Reservascontrol extends Controlador{
                 $reserva->setTotal_pagar($total_pagar);
                 $reserva->setNum_reserva($num_reserva);
                 
-                $reserva->crearReserva($reserva);
+                $reserva->crearReservas($reserva);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
             } catch (Exception $ex) {
@@ -118,7 +118,7 @@ class Reservascontrol extends Controlador{
                 $reserva->setTotal_pagar($total_pagar);
                 $reserva->setNum_reserva($num_reserva);
                 
-                $reserva->actualizarReserva($reserva);
+                $reserva->actualizarReservas($reserva);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             
@@ -146,7 +146,7 @@ class Reservascontrol extends Controlador{
                 $reserva->setTotal_pagar($total_pagar);
                 $reserva->setNum_reserva($num_reserva);
                 
-                $reserva->eliminarReserva($reserva);
+                $reserva->eliminarReservas($reserva);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             

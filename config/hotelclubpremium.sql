@@ -119,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `fecha_nacimiento` date NOT NULL,
   `sex_usuario` char(1) NOT NULL,
   `correo_electronico` varchar(40) NOT NULL,
+  `clave` varchar(45) NOT NULL,
   PRIMARY KEY (`cod_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

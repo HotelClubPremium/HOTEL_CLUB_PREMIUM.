@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-05-2013 a las 17:24:55
+-- Tiempo de generación: 29-05-2013 a las 05:16:02
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -34,6 +34,14 @@ CREATE TABLE IF NOT EXISTS `facturacion` (
   PRIMARY KEY (`numero_checkout`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `facturacion`
+--
+
+INSERT INTO `facturacion` (`numero_checkout`, `codigo_cliente`, `numero_servicio`, `facturacion_total`) VALUES
+(10, 120, 120, 100000),
+(123, 12, 6, 325000);
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,15 @@ CREATE TABLE IF NOT EXISTS `habitacion` (
   `disponibilidad` tinyint(4) NOT NULL,
   PRIMARY KEY (`num_habitacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `habitacion`
+--
+
+INSERT INTO `habitacion` (`num_habitacion`, `tipo`, `precio`, `disponibilidad`) VALUES
+(12, 'penhouse', 500000, 1),
+(13, 'penhouse', 500000, 1),
+(112, 'sencillo', 234000, 1);
 
 -- --------------------------------------------------------
 
@@ -106,6 +123,14 @@ CREATE TABLE IF NOT EXISTS `tarjeta_registro` (
   PRIMARY KEY (`num_checkIn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tarjeta_registro`
+--
+
+INSERT INTO `tarjeta_registro` (`num_checkIn`, `codigo_cliente`, `numero_servicio`, `total`, `fecha_servicio`) VALUES
+(3, 3, 4, 650000, '2013-05-22'),
+(4, 4, 4, 400000, '2013-05-22');
+
 -- --------------------------------------------------------
 
 --
@@ -127,10 +152,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`cod_usuario`, `nom_usuario`, `ape_usuario`, `fecha_nacimiento`, `sex_usuario`, `correo_electronico`) VALUES
-('1', 'jeiner', 'mellado', '2013-04-29', 'm', 'jeiner@hotmail.com'),
-('2', 'carlos', 'aaaaaa', '2013-04-29', 'm', 'carlos@hotmail.com'),
-('3', 'miguel', 'nnnnn', '2013-04-29', 'm', 'miguel@hotmail.com');
+INSERT INTO `usuario` (`cod_usuario`, `nom_usuario`, `ape_usuario`, `fecha_nacimiento`, `sex_usuario`, `correo_electronico`, `clave`) VALUES
+('1', 'jeiner', 'mellado', '2013-04-29', 'm', 'jeiner@hotmail.com', '1'),
+('13', 'jjjjjjjj', 'jjjjjj', '2013-05-14', 'M', 'jeiner@hotmail.com', '13'),
+('2', 'carlos', 'aaaaaa', '2013-04-29', 'm', 'carlos@hotmail.com', '2'),
+('25', 'lau', 'lau', '2013-05-14', 'F', 'lau@hotmail.com', '25'),
+('3', 'miguel', 'nnnnn', '2013-04-29', 'm', 'miguel@hotmail.com', '3');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

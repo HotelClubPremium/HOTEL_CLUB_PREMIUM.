@@ -142,7 +142,7 @@ public function setClave($clave) {
         $correo= $user->getCorreo_electronico();
         $clave = $user->getClave();
         
-        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico, clave) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo','$clave')";
+        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico, clave) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo', SHA('$clave'))";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
@@ -175,7 +175,7 @@ public function setClave($clave) {
         //TODO: Hacer las funciones de encriptacion en php 
         //$clave = encriptar_sha($clave)
 
-        $sql = "SELECT * FROM usuario WHERE cod_usuario=? AND clave=?";
+        $sql = "SELECT * FROM usuario WHERE cod_usuario=? AND clave=SHA(?)";
         $param = array($usuario, $clave);
         $this->__setSql($sql);
         $res = $this->consultar($sql, $param);

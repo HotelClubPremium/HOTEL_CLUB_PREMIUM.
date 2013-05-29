@@ -29,7 +29,7 @@ class Reservascontrol extends Controlador{
     
      public function detalle($num_reserva) {
         try {
-            $reserva = $this->modelo->leerUsuarioPorDocumento($placa);
+            $reserva = $this->modelo->leerUsuarioPorDocumento($num_reserva);
             if ($reserva != null) {
                 $this->vista->set('titulo', 'Datos de ' . $reserva->getCod_usuario());
                 $this->vista->set('reserva', $reserva);

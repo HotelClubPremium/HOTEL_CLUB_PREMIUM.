@@ -71,6 +71,10 @@
                     <td><input name="correo_electronico" id="correo_electronico" type="text" /></td>
                 </tr>
                 <tr>
+                    <th scope="row">Clave</th>
+                    <td><input name="clave" id="clave" type="text" /></td>
+                </tr>
+                <tr>
                     <td colspan="2"><input name="agregarUsuario" id="agregarTelevisores" type="submit"  value="Guardar"  /></td>
                 </tr>
             </table>

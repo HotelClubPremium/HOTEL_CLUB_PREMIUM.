@@ -40,6 +40,7 @@
                     <td><?php echo $user->getFecha_nacimiento()->format('Y-m-d');?></td>
                     <td><?php echo $user->getSex_usuario();?></td>
                     <td><?php echo $user->getCorreo_electronico();?></td>
+                     <td><?php echo $user->getClave();?></td>
                     
                 </tr>
                 <?php } ?>
@@ -47,8 +48,10 @@
     </table>
         <br>
       		
-				<p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">NUEVO USUARIO</a></p>
-				
+      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">NUEVO USUARIO</a></p>
+	 <br>
+      		
+      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>			
       
      </div>
   <div id="pie">hcp</div>

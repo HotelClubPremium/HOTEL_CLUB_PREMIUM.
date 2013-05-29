@@ -54,7 +54,7 @@ $lista = $users->leerUsuarios();
                     <td><?php echo $usuario->getfecha_nacimiento->format('Y-m-d');?></td>
                        <td><?php echo $usuario->getsex_usuario();?></td>
                        <td><?php echo $usuario->getcorreo_electronico();?></td>
-                       
+                         <td><?php echo $usuario->getClave();?></td>
                 </tr>
                 <?php } ?>
             </tbody>

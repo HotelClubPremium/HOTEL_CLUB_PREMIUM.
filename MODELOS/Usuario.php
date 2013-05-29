@@ -23,6 +23,7 @@ class Usuario extends Modelo {
     private $fecha_nacimiento;
     private $sex_usuario;
     private $correo_electronico;
+    private $clave;
 
     public function __construct() {
         parent::__construct();
@@ -47,6 +48,9 @@ class Usuario extends Modelo {
          if (array_key_exists('correo_electronico', $props)) {
             $user->setCorreo_electronico($props['correo_electronico']);
         }
+        if (array_key_exists('clave', $props)) {
+            $user->setClave($props['clave']);
+        }
     }
 
     private function getParametros(Usuario $usuario) {
@@ -56,7 +60,8 @@ class Usuario extends Modelo {
             ':ape_usuario' => $usuario->getApe_usuario(),
             ':fecha_nacimiento' =>$usuario->getFecha_nacimiento(),
             ':sex_usuario' => $usuario->getSex_usuario(),
-            ':correo_electronico' => $usuario->getCorreo_electronico()
+            ':correo_electronico' => $usuario->getCorreo_electronico(),
+            ':clave' => $usuario->getClave()
         );
         
         return $parametros;
@@ -114,6 +119,13 @@ public function getCorreo_electronico() {
 public function setCorreo_electronico($correo_electronico) {
     $this->correo_electronico = $correo_electronico;
 }
+public function getClave() {
+    return $this->clave;
+}
+
+public function setClave($clave) {
+    $this->clave = $clave;
+}
 
 /**
  * Description: Funciones CRUD
@@ -128,8 +140,9 @@ public function setCorreo_electronico($correo_electronico) {
         $fecha = $user->getFecha_nacimiento();
         $sexo = $user->getSex_usuario();
         $correo= $user->getCorreo_electronico();
+        $clave = $user->getClave();
         
-        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo')";
+        $sql = "INSERT INTO usuario (cod_usuario, nom_usuario, ape_usuario, fecha_nacimiento, sex_usuario, correo_electronico, clave) VALUES('$codigo','$nombre','$apellido','".$fecha."','$sexo','$correo','$clave')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
@@ -156,6 +169,24 @@ public function setCorreo_electronico($correo_electronico) {
         }
         return null;
     }
+    
+    
+      public function leerUsuarioPorClave($usuario, $clave) {
+        //TODO: Hacer las funciones de encriptacion en php 
+        //$clave = encriptar_sha($clave)
+
+        $sql = "SELECT * FROM usuario WHERE cod_usuario=? AND clave=?";
+        $param = array($usuario, $clave);
+        $this->__setSql($sql);
+        $res = $this->consultar($sql, $param);
+        $usuario = NULL;
+        foreach ($res as $fila) {
+            $usuario = new Usuario();
+            $this->mapearUsuario($usuario, $fila);
+        }
+        return $usuario;
+    }
+
 
     
     public function actualizarUsuarios(Usuario $user) {

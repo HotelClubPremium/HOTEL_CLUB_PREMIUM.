@@ -16,6 +16,11 @@ class Usuariocontrol extends Controlador{
 
  public function index() {
         try {
+            session_start();
+            if (!isset($_SESSION['usuario.id'])) {
+                $this->setVista('fuera');
+                return $this->vista->imprimir();
+            }
             $datos = $this->modelo->leerUsuarios();
             $this->vista->set('usuarios', $datos);
             $this->vista->set('titulo', 'Lista de usuarios');
@@ -59,6 +64,7 @@ public function guardar() {
             $fecha_nacimiento = isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : NULL;
             $sex_usuario = isset($_POST['sex_usuario']) ? $_POST['sex_usuario'] : NULL;
             $correo_electronico= isset($_POST['correo_electronico']) ? $_POST['correo_electronico'] : NULL;
+             $clave = isset($_POST['clave']) ? $_POST['clave'] : NULL;
             //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
             try {
                 $usuario = new Usuario();
@@ -68,6 +74,7 @@ public function guardar() {
                 $usuario->setFecha_nacimiento($fecha_nacimiento);
                 $usuario->setSex_usuario($sex_usuario);
                 $usuario->setCorreo_electronico($correo_electronico);
+                $usuario->setClave($clave);
                 $usuario->crearUsuarios($usuario);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
@@ -79,6 +86,36 @@ public function guardar() {
                 $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());
                 $this->setVista('agregar');
             }
+            return $this->vista->imprimir();
+        }
+    }
+    
+     public function login() {
+        $this->vista->set('titulo', 'Acceder a la aplicaci&oacute;n');
+        return $this->vista->imprimir();
+    }
+
+    public function fuera() {
+        $this->vista->set('titulo', 'SALIENDO DE LA APLICACION');
+         session_start();
+        $_SESSION['usuario.id'] = null;
+        session_destroy();
+        return $this->vista->imprimir();
+    }
+
+    public function entrar() {
+        if (isset($_POST['enviar'])) {
+            $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
+            $clave = isset($_POST['clave']) ? $_POST['clave'] : NULL;
+            $usuario = $this->modelo->leerUsuarioPorClave($cod_usuario, $clave);
+            if ($usuario == NULL) {
+                $this->vista->set('mensaje', 'No esta registrado');
+                return $this->vista->imprimir();
+            }
+            $this->vista->set('mensaje', 'Entrar a la aplicacion');
+            //MANEJO DE SESIONES
+            session_start();
+            $_SESSION['usuario.id'] = $usuario->getCod_usuario();
             return $this->vista->imprimir();
         }
     }

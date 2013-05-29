@@ -16,6 +16,11 @@ class Principalcontrol extends Controlador{
 
  public function index() {
         try {
+            /* session_start();
+            if (!isset($_SESSION['usuario.id'])) {
+                $this->setVista('fuera');
+                return $this->vista->imprimir();
+            }*/
            
           
             $this->vista->set('titulo', 'Lista de usuarios');

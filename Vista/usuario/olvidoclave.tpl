@@ -17,7 +17,7 @@
   </tr>
   <tr>
     <td>Correo electrónico</td>
-    <td><input type="text" name="correo" id="correo" />    </td>
+    <td><input type="text" name="correo_electronico" id="correo_electronico" />    </td>
   </tr>
   <tr>
     <td colspan="2" align="center"><input type="submit" name="botonenviar" id="botonenviar" value="Enviar" />    </td>

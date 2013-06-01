@@ -119,7 +119,49 @@ public function guardar() {
             return $this->vista->imprimir();
         }
     }
-    
+     public function enviardatosolvido() {
+        if (isset($_POST['botonenviar'])) {
+            $cod_usuario = isset($_POST['$cod_usuario']) ? $_POST['$cod_usuario'] : NULL;
+            $correo = isset($_POST['correo']) ? $_POST['correo'] : NULL;
+            $usuario = $this->modelo->leerUsuarioPorMail($cod_usuario, $correo);
+            if ($usuario == NULL) {
+                $this->vista->set('mensaje', 'No esta registrado');
+                return $this->vista->imprimir();
+            }
+
+            $msg1 = "Para cambiar su clave, haga clic en el siguiente enlace:<br>";
+            //TODO: Mejor URL Para recuperar clave, por ejemplo, 
+            //md5 o sha combinando usuario+mail+salt, etc.
+            $msg1 .= "http://localhost/HOTEL_CLUB_PREMIUM/usuario/cambiarclave/" . $usuario->getCod_usuario();
+            $msg1 .= "<br>El administrador";
+
+            //TODO: se puede encapsular el envio de correos en una clase, para 
+            //personalizar mas facil los datos configuracion y las opciones de envio.
+            $mailer = new PHPMailer();
+            $mailer->SetFrom("cursoss400@gmail.com", "PROGRAMACION BAJO WEB SS400");
+            $direccion = $usuario->getCorreo();
+            $nombre = $usuario->getNom_usuario() . " " . $usuario->getApe_usuario();
+            $mailer->AddAddress($direccion, $nombre);
+            $mailer->CharSet = "UTF-8";
+            $mailer->SMTPDebug = true;
+            $mailer->Subject = "Cambio de contraseña en la aplicación HOTEL_CLUB_PREMIUM";
+            $mailer->MsgHTML($msg1);
+            $mailer->IsSMTP();
+            $mailer->Host = "smtp.gmail.com";
+            $mailer->Port = 587;
+            $mailer->SMTPAuth = true;
+            $mailer->SMTPSecure = "tls";
+            $mailer->Username = "cursoss400@gmail.com";
+            $mailer->Password = "curso-400";
+            if (!$mailer->Send()) {
+                $this->vista->set("mensaje", "Error al enviar correo! (" . $mailer->ErrorInfo . ")");
+                return $this->vista->imprimir();
+            } else {
+                $this->vista->set('mensaje', 'Se ha enviado la informaci&oacute;n de acceso a su correo.');
+                return $this->vista->imprimir();
+            }
+        }
+    }
     
     
     

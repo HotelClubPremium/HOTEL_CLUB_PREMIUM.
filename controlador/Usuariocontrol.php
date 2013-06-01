@@ -119,11 +119,19 @@ public function guardar() {
             return $this->vista->imprimir();
         }
     }
+    
+    
+    public function olvidoclave() {
+        $this->vista->set('titulo', 'Recuperar contrase&ntilde;a');
+        return $this->vista->imprimir();
+    }
+    
+    
      public function enviardatosolvido() {
         if (isset($_POST['botonenviar'])) {
             $cod_usuario = isset($_POST['$cod_usuario']) ? $_POST['$cod_usuario'] : NULL;
-            $correo = isset($_POST['correo']) ? $_POST['correo'] : NULL;
-            $usuario = $this->modelo->leerUsuarioPorMail($cod_usuario, $correo);
+            $correo_electronico = isset($_POST['correo_electronico']) ? $_POST['correo_electronico'] : NULL;
+            $usuario = $this->modelo->leerUsuarioPorMail($cod_usuario, $correo_electronico);
             if ($usuario == NULL) {
                 $this->vista->set('mensaje', 'No esta registrado');
                 return $this->vista->imprimir();
@@ -139,7 +147,7 @@ public function guardar() {
             //personalizar mas facil los datos configuracion y las opciones de envio.
             $mailer = new PHPMailer();
             $mailer->SetFrom("cursoss400@gmail.com", "PROGRAMACION BAJO WEB SS400");
-            $direccion = $usuario->getCorreo();
+            $direccion = $usuario->getCorreo_electronico();
             $nombre = $usuario->getNom_usuario() . " " . $usuario->getApe_usuario();
             $mailer->AddAddress($direccion, $nombre);
             $mailer->CharSet = "UTF-8";

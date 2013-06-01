@@ -186,11 +186,11 @@ public function setClave($clave) {
         }
         return $usuario;
     }
-public function leerUsuarioPorMail($cod_usuario, $correo) {
+public function leerUsuarioPorMail($cod_usuario, $correo_electronico) {
         //TODO: Hacer las funciones de encriptacion en php 
         //$clave = encriptar_sha($clave)
-        $sql = "SELECT * FROM usuario WHERE cod_usuario=? AND correo=?";
-        $param = array($cod_usuario, $correo);
+        $sql = "SELECT * FROM usuario WHERE cod_usuario=? AND correo_electronico=?";
+        $param = array($cod_usuario, $correo_electronico);
         $this->__setSql($sql);
         $res = $this->consultar($sql, $param);
         $usuario = NULL;

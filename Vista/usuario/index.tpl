@@ -51,8 +51,11 @@
       <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">NUEVO USUARIO</a></p>
 	 <br>
       		
-      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>			
+      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>	
       
+     <td><?php echo "Bienvenido ".$_SESSION['usuario.id'] ;?></td>
+    <td><?php echo " ".$_SESSION['usuario2.id'] ;?></td>
+     
      </div>
   <div id="pie">hcp</div>
 </div>

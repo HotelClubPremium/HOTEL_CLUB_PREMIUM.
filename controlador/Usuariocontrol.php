@@ -123,6 +123,10 @@ public function guardar() {
             session_start();
             $_SESSION['usuario.id'] = $usuario->getNom_usuario();
             $_SESSION['usuario2.id'] =$usuario->getApe_usuario();
+            $_SESSION['usuario3.id'] =$usuario->getFecha_nacimiento();
+            $_SESSION['usuario4.id'] =$usuario->getsex_usuario();
+            $_SESSION['usuario5.id'] =$usuario->getCorreo_electronico();
+            $_SESSION['usuario6.id'] =$usuario->getCod_usuario();
             return $this->vista->imprimir();
         }
     }
@@ -202,6 +206,7 @@ public function guardar() {
                 
                 $usuario->setCod_usuario($cod_usuario);
                 $usuario->actualizarUsuarios($usuario);
+                 session_start();
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha modificado la informacion de manera satisfactoria');
             
@@ -228,6 +233,7 @@ public function guardar() {
                 
                 $usuario->setCod_usuario($cod_usuario);
                 $usuario->eliminarusuarios($usuario);
+                 session_start();
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha eliminado la informacion de manera satisfactoria');
             

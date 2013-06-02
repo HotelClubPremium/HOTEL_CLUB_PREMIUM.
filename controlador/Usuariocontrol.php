@@ -21,9 +21,15 @@ class Usuariocontrol extends Controlador{
                 $this->setVista('fuera');
                 return $this->vista->imprimir();
             }
+//            $Usuario= $_SESSION['usuario.id'] ;  
+            
+//            $_SESSION['usuario'] = '';
             $datos = $this->modelo->leerUsuarios();
             $this->vista->set('usuarios', $datos);
             $this->vista->set('titulo', 'Lista de usuarios');
+        
+            
+           
             return $this->vista->imprimir();
         } catch (Exception $exc) {
             echo 'Error de aplicacion: ' . $exc->getMessage();
@@ -115,7 +121,8 @@ public function guardar() {
             $this->vista->set('mensaje', 'Entrar a la aplicacion');
             //MANEJO DE SESIONES
             session_start();
-            $_SESSION['usuario.id'] = $usuario->getCod_usuario();
+            $_SESSION['usuario.id'] = $usuario->getNom_usuario();
+            $_SESSION['usuario2.id'] =$usuario->getApe_usuario();
             return $this->vista->imprimir();
         }
     }

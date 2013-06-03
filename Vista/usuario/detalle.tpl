@@ -17,7 +17,7 @@
 <h2 align="center">DETALLE DE USUARIO</h2>
 <form action="/HOTEL_CLUB_PREMIUM/Usuario/modificaryeliminar" method="post" name="formulario2">
     
-<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
+<table width="416" border="0" cellspacing="0" cellpadding="2" align="center">
  
   
                 <tr>

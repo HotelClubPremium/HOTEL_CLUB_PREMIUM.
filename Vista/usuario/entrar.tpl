@@ -61,7 +61,7 @@
 </table>
         </form>
   </div>
-  <div id="pie">hcp</div>
+  <div id="pie">EL MEJOR HOTEL</div>
 </div>  
   </body>
     

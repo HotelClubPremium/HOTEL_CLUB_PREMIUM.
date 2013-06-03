@@ -16,7 +16,7 @@
         
         <h2>ACCEDER</h2>
         <form name="form1" action="/HOTEL_CLUB_PREMIUM/usuario/entrar" method="post">
-            <table border="1" width="500" cellspacing="0" cellpadding="0">
+            <table border="0" width="500" cellspacing="0" cellpadding="0">
                 <tbody>
                     <tr>
                         <th>Documento</th>

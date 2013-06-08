@@ -3,10 +3,10 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Hotel Club Premium - AgregarUsuarios</title>
-<link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
-<link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
-        
+        <title>Hotel Club Premium - AgregarUsuarios</title>
+        <link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
+        <link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <div id="principal">
@@ -15,7 +15,7 @@
   <div id="contenido">
         <h2>DATOS</h2>
         <form action="/HOTEL_CLUB_PREMIUM/usuario/guardar" method="post" name="formulario">
-            <table width="416" border="0" cellspacing="0" cellpadding="2">
+            <table width="416" border="0" cellspacing="0" cellpadding="2" align=center >
                 <tr>
                     <th width="197" scope="row">Identificacion: </th>
                     <td width="211"><input name="cod_usuario" id="cod_usuario" type="text" /></td>
@@ -51,7 +51,8 @@
                     <td><input name="clave" id="clave" type="text" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input name="agregarUsuario" id="agregarTelevisores" type="submit"  value="Guardar"  /></td>
+                    <th scope="row"></th>
+                    <td colspan="2"><input class="btn btn-info" name="agregarUsuario" id="agregarTelevisores" type="submit"  value="Guardar"  /></td>
                 </tr>
             </table>
         </form>

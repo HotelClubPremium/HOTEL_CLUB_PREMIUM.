@@ -7,6 +7,7 @@
 <title>Hotel Club Premium - DetallesUsuarios</title>
 <link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
 <link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     </head>
 <body>
     
@@ -48,8 +49,8 @@
                 </tr>
     
   <tr>
-   <td colspan="2"><input name="ModificarUsuarios" id="ModificarUsuarios" type="submit" value="Modificar"  /></td>
-   <td colspan="2"><input name="EliminarUsuarios" id="EliminarUsuarios" type="submit" value="Eliminar" /></td>
+   <td colspan="2"><input class="btn btn-info" name="ModificarUsuarios" id="ModificarUsuarios" type="submit" value="Modificar"  /></td>
+   <td colspan="2"><input class="btn btn-info" name="EliminarUsuarios" id="EliminarUsuarios" type="submit" value="Eliminar" /></td>
    
     </tr>
    

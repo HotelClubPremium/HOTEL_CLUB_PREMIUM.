@@ -23,7 +23,7 @@ class Principalcontrol extends Controlador{
             }*/
            
           
-            $this->vista->set('titulo', 'Lista de usuarios');
+//            $this->vista->set('titulo', 'Lista de usuarios');
               $this->vista->set('Principal','');
             return $this->vista->imprimir();
         } catch (Exception $exc) {

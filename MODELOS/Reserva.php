@@ -129,16 +129,17 @@ class Reserva  extends Modelo {
 
     
    public function crearReservas(Reserva $user) {
-        $num_reserva= $user->getNum_reserva();
-        $cod_usuario = $user->getCod_usuario();
-        $num_habitacion = $user->getNum_habitacion();
-        $dias_reserva = $user->getDias_reserva();
-        $fecha_inicio = $user->getFecha_inicio  ();
-        $fecha_reserva= $user->getFecha_reserva ();
-        $total_pagar = $user->getTotal_pagar ();
-        $sql = "INSERT INTO reserva (num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar) VALUES ('$num_reserva','$cod_usuario','$num_habitacion',$dias_reserva,'".$fecha_inicio."','".$fecha_reserva."',$total_pagar)";
+        $sql = "INSERT INTO reserva (num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar) VALUES (:num_reserva,:cod_usuario,:num_habitacion,:dias_reserva,:fecha_reserva,:total_pagar)";
         $this->__setSql($sql);
-        $this->ejecutar($this->getParametros($user));
+        $this->prepararSentencia($sql);
+        $this->sentencia->bindParam(":num_reserva", $user->getNum_reserva(),PDO::PARAM_STR);
+        $this->sentencia->bindParam(":cod_usuario", $user->getCod_usuario(),PDO::PARAM_STR);
+        $this->sentencia->bindParam(":num_habitacion", $user->getNum_habitacion(),PDO::PARAM_STR);
+        $this->sentencia->bindParam(":dias_reserva", $user->getDias_reserva(),PDO::PARAM_INT);
+        $this->sentencia->bindParam(":fecha_inicio", $this->formatearFecha($user->getFecha_inicio()),PDO::PARAM_STR);
+        $this->sentencia->bindParam(":fecha_reserva", $this->formatearFecha($user->getFecha_reserva()),PDO::PARAM_STR);
+        $this->sentencia->bindParam(":total_pagar", $user->getTotal_pagar(),PDO::PARAM_STR);
+                $this->ejecutarSentencia();
     }
 
     public function leerReservas() {
@@ -168,25 +169,16 @@ class Reserva  extends Modelo {
     
     
       public function actualizarReservas(Reserva $user) {
-        $num_reserva= $user->getNum_reserva();
-        $cod_usuario = $user->getCod_usuario();
-        $num_habitacion = $user->getNum_habitacion();
-        $dias_reserva = $user->getDias_reserva();
-        $fecha_inicio = $user->getFecha_inicio  ();
-        $fecha_reserva= $user->getFecha_reserva ();
-        $total_pagar = $user->getTotal_pagar ();
-       
-         $sql = "UPDATE test.reserva SET num_reserva='$num_reserva',cod_usuario='$cod_usuario',num_habitacion='$num_habitacion',dias_reserva='$dias_reserva',fecha_inicio='$fecha_inicio',fecha_reserva='$fecha_reserva',total_pagar='$total_pagar' WHERE num_reserva=$num_reserva";
+          
+         $sql = "UPDATE test.reserva SET num_reserva=:num_reserva,cod_usuario=:cod_usuario,num_habitacion=:num_habitacion,dias_reserva=:dias_reserva,fecha_inicio=:fecha_inicio,fecha_reserva=:fecha_reserva,total_pagar=:total_pagar WHERE num_reserva=:num_reserva";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
-        
-    }
+            }
     
    
        public function eliminarReservas(Reserva $user) {
         $num_reserva = $user->getNum_reserva();
         $sql = "DELETE FROM test.reserva where num_reserva=$num_reserva";
-        $this->__setSql($sql);
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }

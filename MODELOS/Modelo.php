@@ -59,16 +59,16 @@ abstract class Modelo {
      * sobre la consulta realizada.
      * @param string $sql
      * @return PDOStatement
-     */
-   /* protected function consultar($sql = null) {
-        if($sql == null)
-            $sql = $this->sql;
-        $sentencia = $this->db->query($sql,PDO::FETCH_ASSOC);
-        if($sentencia === false){
-            self::enviarError($this->db->errorInfo());
-        }
-        return $sentencia;
-    }*/
+     */ protected function consultarSentencia() {
+        $this->sentencia->execute();
+        $resultado = $this->sentencia->fetchAll();
+        return $resultado;
+    }
+   protected function prepararSentencia($sql) {
+        $this->sentencia = $this->db->prepare($sql);
+        return $this->sentencia;
+    }
+
     
      protected function consultar($sql = null, $param = null) {
         if ($sql == null)
@@ -94,8 +94,13 @@ abstract class Modelo {
             self::enviarError($this->db->errorInfo());
         }
     }
+    protected function ejecutarSentencia() {
+        if (!$this->sentencia->execute()) {
+            self::enviarError($this->db->errorInfo());
+        }
+    }
     
-    protected static function formatearFecha(Date $fecha, $formato='Y-m-d') {
+     protected static function formatearFecha(DateTime $fecha, $formato = 'Y-m-d') {
         return empty($formato) ? $fecha->format(DateTime::ISO8601) : $fecha->format($formato);
     }
 }

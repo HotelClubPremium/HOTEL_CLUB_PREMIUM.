@@ -36,6 +36,30 @@ class Usuariocontrol extends Controlador{
         }
     }
     
+    public function informacion() {
+        try {
+            session_start();
+          /*  if (!isset($_SESSION['usuario.id'])) {
+                $this->setVista('fuera');
+                return $this->vista->imprimir();
+            }
+//            $Usuario= $_SESSION['usuario.id'] ;  
+            
+//            $_SESSION['usuario'] = '';
+             $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
+            $clave = isset($_POST['clave']) ? $_POST['clave'] : NULL;
+       //     $usuario = $this->modelo->leerUsuarioPorClave($cod_usuario, $clave);//*/
+           
+            
+        
+            
+           
+            return $this->vista->imprimir();
+        } catch (Exception $exc) {
+            echo 'Error de aplicacion: ' . $exc->getMessage();
+        }
+    }
+    
     
      public function detalle($cod_usuario) {
         try {

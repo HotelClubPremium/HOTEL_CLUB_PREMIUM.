@@ -15,7 +15,7 @@
             <div id="contenido">
                  
                 <p class="text-info"><?php echo $titulo; ?> </p>
-                 <p class="text-info"><?php echo $mensaje; ?> </p>
+                 
                  <br>
                  <p id="button-style" align="center">
                  <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/login">ENTRAR</button>

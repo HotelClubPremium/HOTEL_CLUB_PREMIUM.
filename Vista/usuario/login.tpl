@@ -17,27 +17,31 @@
         
         <h2>ACCEDER</h2>
         <form name="form1" action="/HOTEL_CLUB_PREMIUM/usuario/entrar" method="post">
-            <table border="0" width="500" cellspacing="0" cellpadding="0">
+            <table border="0" width="500" cellspacing="0" cellpadding="0" align="center" >
                 <tbody>
                     <tr>
                         <th>Documento</th>
-                        <td><input name="cod_usuario" id="cod_usuario" type="text" class="input-small" placeholder="Documento" /></td>
+                        <td><input name="cod_usuario" id="cod_usuario" type="text"  placeholder="Documento" /></td>
                     </tr>
                     <tr>
                         <th>Contraseña</th>
-                        <td><input name="clave" id="clave" type="password" class="input-small" placeholder="Contraseña" /></td>
+                        <td><input name="clave" id="clave" type="password"  placeholder="Contraseña" /></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input class="btn btn-info" name="enviar" id="enviar" type="submit" value="Entrar" /></td>
-                    </tr>
+                        <th></th>
+                         <td colspan="2" align="center" ><input class="btn btn-info" name="enviar" id="enviar" type="submit" value="Entrar" /></td>
+                        </tr>
                     <tr>
+                        <th></th>
                       <td colspan="2" align="center"><a href="/HOTEL_CLUB_PREMIUM/usuario/olvidoclave">Olvidé mi contraseña!</a></td>
                   </tr>
                 </tbody>
             </table>
         </form>
         <br><br>
-        <a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nuevo usuario</a>
+         <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nuevo Usuario</button>
+       </p> 
         </div>
   <div id="pie">hcp</div>
 </div>

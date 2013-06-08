@@ -5,6 +5,7 @@
 <title>Hotel Club Premium - Bienvenidos</title>
 <link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
 <link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
        
 <form action="/HOTEL_CLUB_PREMIUM/Usuario/modificaryeliminar" method="post" name="formulario5">
     
-<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
+<table width="416" border="0" cellspacing="0" cellpadding="2" align="center">
  
   
                 <tr>
@@ -52,22 +53,25 @@
                 </tr>
                 
      <tr>
-   <td colspan="2"><input name="ModificarUsuarios" id="ModificarUsuarios" type="submit" value="Modificar"  /></td>
+         <th scope="row"></th>
+   <td colspan="2"><input class="btn btn-info" name="ModificarUsuarios" id="ModificarUsuarios" type="submit" value="Modificar"  /></td>
    </tr>
    
     <tr>
-    <td colspan="2"><input name="EliminarUsuarios" id="EliminarUsuarios" type="submit" value="Eliminar" /></td>
+        <th scope="row"></th>
+    <td colspan="2"><input class="btn btn-info" name="EliminarUsuarios" id="EliminarUsuarios" type="submit" value="Eliminar" /></td>
    </tr>
 </table>
  </form>
 
-      		
-      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">NUEVO USUARIO</a></p>
-	 <br>
-      		
-      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>	
       
-          <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>	
+      	
+      <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/agregar">Nuevo Usuario</button>
+       </p> 
+       <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/fuera">Cerrar Sesion</button>
+       </p> 
       
     
      

@@ -53,6 +53,8 @@
       		
       <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>	
       
+       <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/informacion">CONFIGURACION</a></p>
+      
      <td><?php echo "Bienvenido ".$_SESSION['usuario.id'] ;?></td>
     <td><?php echo " ".$_SESSION['usuario2.id'] ;?></td>
      

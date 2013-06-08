@@ -6,6 +6,7 @@
 <title>Hotel Club Premium - Login</title>
 <link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
 <link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+ <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
         
@@ -20,14 +21,14 @@
                 <tbody>
                     <tr>
                         <th>Documento</th>
-                        <td><input name="cod_usuario" id="cod_usuario" type="text" /></td>
+                        <td><input name="cod_usuario" id="cod_usuario" type="text" class="input-small" placeholder="Documento" /></td>
                     </tr>
                     <tr>
-                        <th>Clave</th>
-                        <td><input name="clave" id="clave" type="password" /></td>
+                        <th>Contraseña</th>
+                        <td><input name="clave" id="clave" type="password" class="input-small" placeholder="Contraseña" /></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input name="enviar" id="enviar" type="submit" value="Entrar" /></td>
+                        <td colspan="2"><input class="btn btn-info" name="enviar" id="enviar" type="submit" value="Entrar" /></td>
                     </tr>
                     <tr>
                       <td colspan="2" align="center"><a href="/HOTEL_CLUB_PREMIUM/usuario/olvidoclave">Olvidé mi contraseña!</a></td>

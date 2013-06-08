@@ -48,7 +48,7 @@
     </table>
         <br>
       		
-      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar">NUEVO USUARIO</a></p>
+      <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/agregar" >NUEVO USUARIO</a></p>
 	 <br>
       		
       <p id="button-style" align="center" ><a href="/HOTEL_CLUB_PREMIUM/usuario/fuera">SALIR</a></p>	

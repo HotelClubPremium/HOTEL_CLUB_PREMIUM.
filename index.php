@@ -24,13 +24,13 @@ function cargadorClases(){
     require_once './MODELOS/Modelo.php';        /*  mmmmmmmm */
     require_once './MODELOS/Usuario.php';       /*  mmmmmmmm ......*/
     require_once './MODELOS/Habitacion.php';
- 
+    require_once './MODELOS/Reserva.php';
     require_once './MODELOS/Facturacion.php'; 
     require_once './MODELOS/Tarjeta_registro.php';
     require_once './controlador/Controlador.php';
     require_once './controlador/Usuariocontrol.php';
     require_once './controlador/Habitacioncontrol.php';
-   
+    require_once './controlador/ReservaControl.php';
     require_once './controlador/Facturacioncontrol.php';
     require_once './controlador/Principalcontrol.php';
     require_once './controlador/Tarjeta_registrocontrol.php';

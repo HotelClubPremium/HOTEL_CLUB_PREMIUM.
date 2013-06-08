@@ -19,29 +19,27 @@
                 </p>
                 <p class="text-center" >RESERVAS</p> 
                      
-                 <form action="/HOTEL_CLUB_PREMIUM/Usuario/modificaryeliminar" method="post" name="formulario5">
+                 <form action="/HOTEL_CLUB_PREMIUM/Reserva/guardar" method="post" name="formulario5">
                        <table width="416" border="0" cellspacing="0" cellpadding="2" align="center">
-                           
-                           
-                           
+                                                                                 
                         <tr>
                             <th class="text-info"  width="197" scope="row">Identificacion: </th>
-                            <td width="211"><input name="cod_usuario" id="cod_usuario" type="text" disabled="" value= <?php echo " ".$_SESSION['usuario6.id'] ;?>  /></td>
+                            <td width="211"><input name="cod_usuario" id="cod_usuario" type="text"  value= <?php echo " ".$_SESSION['usuario6.id'] ;?>  /></td>
                     
                         </tr>
                         <tr>
                             <th class="text-info" scope="row">Nombre: </th>
-                            <td><input name="nom_usuario" id="Nombre" type="text" value= <?php echo " ".$_SESSION['usuario.id'] ;?> /></td>
+                            <td><input name="nom_usuario" id="Nombre" type="text" disabled="" value= <?php echo " ".$_SESSION['usuario.id'] ;?> /></td>
                          
                            
                         </tr>
                         <tr>
                             <th class="text-info" scope="row">Apellido</th>
-                            <td><input name="ape_usuario" id="ape_usuario" type="text" value=<?php echo " ".$_SESSION['usuario2.id'] ;?> /></td>
+                            <td><input name="ape_usuario" id="ape_usuario" type="text" disabled="" value=<?php echo " ".$_SESSION['usuario2.id'] ;?> /></td>
                         </tr>
                          <tr>
                             <th class="text-info" scope="row">Correo Electronico</th>
-                            <td><input name="correo_electronico" id="correo_electronico" type="text" value=<?php echo " ".$_SESSION['usuario5.id'] ;?> /></td>
+                            <td><input name="correo_electronico" id="correo_electronico" type="text" disabled="" value=<?php echo " ".$_SESSION['usuario5.id'] ;?> /></td>
                          </tr>
                          <tr>
                             <th class="text-info" scope="row">Numero de Habitacion                                                                    </th>
@@ -60,8 +58,7 @@
                          <td colspan="5"><input  class="btn btn-info" name="agregarreserva" id="agregarreserva" type="submit" value="Hacer Reserva"/></td>
                         
                        </table>                 
-                   
-                       
+                                         
                   
                    </form>
                    

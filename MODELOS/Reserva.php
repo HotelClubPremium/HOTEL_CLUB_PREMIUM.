@@ -25,10 +25,10 @@ class Reserva  extends Modelo {
     private $num_reserva;
     private $cod_usuario;
     private $num_habitacion;
-    private $dias_reserva;
     private $fecha_inicio;
+    private $fecha_salida;
     private $fecha_reserva;
-    private $total_pagar;
+    
     
     public function __construct() {
         parent::__construct();
@@ -63,15 +63,23 @@ class Reserva  extends Modelo {
             ':cod_usuario' => $reserva->getCod_usuario(),
             ':num_reserva' => $reserva->getNum_reserva(),
             ':num_habitacion' => $reserva->getNum_habitacion(),
-            ':fecha_inicio' => $this->formatearFecha($reserva->getFecha_inicio()),
-            ':fecha_reserva' => $this->formatearFecha($reserva->getFecha_reserva()),  
-            ':dias_reserva' => $reserva->getDias_reserva(), 
-            ':total_pagar' => $reserva->getTotal_pagar() 
+            ':fecha_inicio' => $reserva->getFecha_inicio(),
+            ':fecha_salida' => $reserva->getFecha_salida(),  
+            ':fecha_reserva' => $reserva->getFecha_reserva(),  
+            
+            
         );
         return $parametros;
     }
+    public function getFecha_salida() {
+        return $this->fecha_salida;
+    }
 
-    public function getNum_reserva() {
+    public function setFecha_salida($fecha_salida) {
+        $this->fecha_salida = $fecha_salida;
+    }
+
+        public function getNum_reserva() {
         return $this->num_reserva;
     }
 
@@ -95,13 +103,7 @@ class Reserva  extends Modelo {
         $this->num_habitacion = $num_habitacion;
     }
 
-    public function getDias_reserva() {
-        return $this->dias_reserva;
-    }
-
-    public function setDias_reserva($dias_reserva) {
-        $this->dias_reserva = $dias_reserva;
-    }
+   
 
     public function getFecha_inicio() {
         return $this->fecha_inicio;
@@ -119,27 +121,19 @@ class Reserva  extends Modelo {
         $this->fecha_reserva = $fecha_reserva;
     }
 
-    public function getTotal_pagar() {
-        return $this->total_pagar;
-    }
-
-    public function setTotal_pagar($total_pagar) {
-        $this->total_pagar = $total_pagar;
-    }
+    
 
     
    public function crearReservas(Reserva $user) {
-        $sql = "INSERT INTO reserva (num_reserva,cod_usuario,num_habitacion,dias_reserva,fecha_inicio,fecha_reserva,total_pagar) VALUES (:num_reserva,:cod_usuario,:num_habitacion,:dias_reserva,:fecha_reserva,:total_pagar)";
+        
+        $cod_usuario= $user->getCod_usuario();
+        $num_habitacion= $user->getNum_habitacion();
+        $fecha_inicio= $user->getFecha_inicio();
+        $fecha_salida= $user->getFecha_salida();
+        $fecha_reserva=  date("Y-m-d");
+        $sql = "INSERT INTO reservas (num_habitacion,fecha_inicio,fecha_salida,fecha_reserva,cod_usuario) VALUES ($num_habitacion,'".$fecha_inicio."','".$fecha_salida."','".$fecha_reserva."','$cod_usuario')";
         $this->__setSql($sql);
-        $this->prepararSentencia($sql);
-        $this->sentencia->bindParam(":num_reserva", $user->getNum_reserva(),PDO::PARAM_STR);
-        $this->sentencia->bindParam(":cod_usuario", $user->getCod_usuario(),PDO::PARAM_STR);
-        $this->sentencia->bindParam(":num_habitacion", $user->getNum_habitacion(),PDO::PARAM_STR);
-        $this->sentencia->bindParam(":dias_reserva", $user->getDias_reserva(),PDO::PARAM_INT);
-        $this->sentencia->bindParam(":fecha_inicio", $this->formatearFecha($user->getFecha_inicio()),PDO::PARAM_STR);
-        $this->sentencia->bindParam(":fecha_reserva", $this->formatearFecha($user->getFecha_reserva()),PDO::PARAM_STR);
-        $this->sentencia->bindParam(":total_pagar", $user->getTotal_pagar(),PDO::PARAM_STR);
-                $this->ejecutarSentencia();
+         $this->ejecutar($this->getParametros($user));           
     }
 
     public function leerReservas() {

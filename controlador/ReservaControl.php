@@ -68,33 +68,30 @@ class ReservaControl extends Controlador{
         
         if (isset($_POST['agregarreserva'])) {
 
-            $num_reserva = isset($_POST['num_reserva']) ? $_POST['num_reserva'] : NULL;
+            
             $cod_usuario= isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
             $num_habitacion = isset($_POST['num_habitacion']) ? $_POST['num_habitacion'] : NULL;
-            $fecha_inicio= isset($_POST['fecha_inicio']) ? $_POST['fecha_inicio'] : NULL;
+            $fecha_inicio= isset($_POST['Fecha_Llegada']) ? $_POST['Fecha_Llegada'] : NULL;
+            $fecha_salida= isset($_POST['Fecha_Salida']) ? $_POST['Fecha_Salida'] : NULL;
             $fecha_reserva= isset($_POST['fecha_reserva']) ? $_POST['fecha_reserva'] : NULL;
-
-            try {
+//            try {
                 $reserva = new Reserva();
                 $reserva->setCod_usuario($cod_usuario);
                 $reserva->setNum_habitacion($num_habitacion);
-
                 $reserva->setFecha_inicio($fecha_inicio);
+                $reserva->setFecha_salida($fecha_salida);
                 $reserva->setFecha_reserva($fecha_reserva);
-
-                $reserva->setNum_reserva($num_reserva);
-                
                 $reserva->crearReservas($reserva);
                 $this->vista->set('titulo', 'Datos almacenados');
                 $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
-            } catch (Exception $ex) {
-                $this->vista->set('titulo', 'Error');
-                $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());
-            } catch (ErrorException $ex) {
-                $this->vista->set('titulo', 'Error');
-                $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());
-                $this->setVista('agregar');
-            }
+//            } catch (Exception $ex) {
+//                $this->vista->set('titulo', 'Error');
+//                $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());
+//            } catch (ErrorException $ex) {
+//                $this->vista->set('titulo', 'Error');
+//                $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());
+//                $this->setVista('agregar');
+//            }
             return $this->vista->imprimir();
         }
     }

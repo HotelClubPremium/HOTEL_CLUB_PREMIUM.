@@ -11,7 +11,7 @@
         </p>
 <h2 align="center">DETALLE DE HABITACION</h2>
 <form action="/HOTEL_CLUB_PREMIUM/Habitacion/modificaryeliminar" method="post" name="form1" onsubmit="return CamposVacios()" >
-<table width="416" border="2" cellspacing="0" cellpadding="2" align="center">
+<table width="416" border="0" cellspacing="0" cellpadding="2" align="center">
   <tr>
     <th width="197" scope="row">Numero De Habitacion</th>
   <!--  <td width="211"><a href="/Habitacion/detalle/<?php echo $habitacion->getNum_habitacion();?>"><?php echo $habitacion->getNum_habitacion();?></a></td>-->
@@ -36,11 +36,11 @@
  
   
   <tr>
-   <td colspan="2"><input name="modificarhabitacion" id="modificarhabitacion" type="submit" value="Modificar" onsubmit="return CamposVacios()"   /></td>
+   <td colspan="2"><input class="btn btn-info" name="modificarhabitacion" id="modificarhabitacion" type="submit" value="Modificar" onsubmit="return CamposVacios()"   /></td>
     </tr>
     
      <tr>
-    <td colspan="2"><input name="eliminarhabitacion" id="eliminarhabitacion" type="submit" value="Eliminar" onsubmit="return CamposVacios()" /></td>
+    <td colspan="2"><input class="btn btn-info" name="eliminarhabitacion" id="eliminarhabitacion" type="submit" value="Eliminar" onsubmit="return CamposVacios()" /></td>
     </tr>
   
 </table>

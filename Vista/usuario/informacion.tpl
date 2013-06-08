@@ -15,8 +15,8 @@
   <div id="contenido">
       
   <h2 align="center">USUARIOS DE LA APLICACION</h2>
-   <td><?php echo "Bienvenido ".$_SESSION['usuario.id'] ;?></td>
-    <td><?php echo " ".$_SESSION['usuario2.id'] ;?></td>
+   <td><b><?php echo "Bienvenido ".$_SESSION['usuario.id'] ;?></b></td>
+    <td><b><?php echo " ".$_SESSION['usuario2.id'] ;?></b></td>
        
 <form action="/HOTEL_CLUB_PREMIUM/Usuario/modificaryeliminar" method="post" name="formulario5">
     

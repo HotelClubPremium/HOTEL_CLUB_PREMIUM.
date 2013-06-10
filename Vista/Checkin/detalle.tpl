@@ -2,16 +2,23 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <title><?php echo $titulo; ?></title>
+         
+        <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hotel Club Premium - DetallesCheckinUsuarios</title>
+<link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
+<link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    
     </head>
 <body>
-<p>
-          <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>
-        </p>
-<h2>DETALLE DE TARJETA REGISTRO</h2>
+ <div id="principal">
+  <div id="encabezado"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Logo.gif" width="965" height="266" alt="logo" /></div>
+  <div id="menu"><a href="/HOTEL_CLUB_PREMIUM/Principal/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Bienvenidos.gif" alt="Bienvenidos" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Administrador.gif" alt="Administrador" width="193" height="59" border="0" /></a><a href="/HOTEL_CLUB_PREMIUM/usuario/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Usuarios.gif" alt="Usuarios" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Reservas.gif" alt="Reservas" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Servicios.gif" alt="Servicios" width="193" height="59" border="0" /></a></div>
+ <div id="contenido">
+<h2>DETALLE DE CHECKIN DEL USUARIO</h2>
 <form action="/HOTEL_CLUB_PREMIUM/Checkin/modificaryeliminar" method="post" name="form1" onsubmit="return CamposVacios()" >
-<table width="416" border="1" cellspacing="0" cellpadding="2">
+<table width="416" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <th width="197" scope="row">Numero checkin</th>
   
@@ -51,11 +58,11 @@
  
   
   <tr>
-   <td colspan="2"><input name="modificarcheckin" id="modificarcheckin" type="submit" value="Modificar" onsubmit="return CamposVacios()"   /></td>
+   <td colspan="2"><input class="btn btn-info" name="modificarcheckin" id="modificarcheckin" type="submit" value="Modificar" onsubmit="return CamposVacios()"   /></td>
     </tr>
     
      <tr>
-    <td colspan="2"><input name="eliminarcheckin" id="eliminarcheckin" type="submit" value="Eliminar" onsubmit="return CamposVacios()" /></td>
+    <td colspan="2"><input class="btn btn-info" name="eliminarcheckin" id="eliminarcheckin" type="submit" value="Eliminar" onsubmit="return CamposVacios()" /></td>
     </tr>
   
 </table>

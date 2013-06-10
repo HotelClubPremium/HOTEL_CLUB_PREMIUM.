@@ -46,12 +46,12 @@
         <form action="/HOTEL_CLUB_PREMIUM/Checkin/buscar" method="post" name="form1"  onsubmit="return CamposVacios()">
             <table width="416" border="1" cellspacing="0" cellpadding="2">
                 <tr>
-                    <th width="197" scope="row">Numero De usuario</th>
+                    <th width="197" scope="row">Codigo De usuario</th>
                     <td width="211"><input name="cod_usuario" id="cod_usuario" type="text" onkeypress="return solonumeros(event)" /></td>
                 </tr>
                 
                    <tr>
-                    <td colspan="2"><input name="buscarcheckin" id="buscarcheckin" type="submit" value="Guardar" onsubmit="return CamposVacios()" /></td>
+                    <td colspan="2"><input name="buscarcheckin" id="buscarcheckin" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
                 </tr>
             </table>
             

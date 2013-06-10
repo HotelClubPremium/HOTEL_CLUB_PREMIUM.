@@ -123,7 +123,19 @@ public function crearCheckin(Checkin $user) {
     }
 
     public function leerCheckin() {
-        $sql = "SELECT num_checkin,cod_usuario,fecha_llegada,fecha_reserva,fecha_inicio,fecha_salida FROM checkin";
+        $sql = "SELECT num_checkin,cod_usuario,fecha_llegada,fecha_reserva,fecha_inicio,fecha_salida FROM checkin ";
+        $this->__setSql($sql);
+        $resultado = $this->consultar($sql);
+        $checkins = array();
+        foreach ($resultado as $fila) {
+            $user = new Checkin();
+            $this->mapearCheckin($user, $fila);
+            $checkins[$user->getNum_checkin()] = $user;
+        }
+        return $checkins;
+    }
+    public function leerCheckin2($cod_usuario) {
+        $sql = "SELECT num_checkin,cod_usuario,fecha_llegada,fecha_reserva,fecha_inicio,fecha_salida FROM checkin WHERE cod_usuario='$cod_usuario'";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $checkins = array();

@@ -19,16 +19,27 @@ class Checkincontrol extends Controlador{
         $this->setModelo($modelo);
     }
 
-    public function index() {
+//    public function index() {
+//        try {
+//            $datos = $this->modelo->leerCheckin();
+//            $this->vista->set('checkin', $datos);
+//            $this->vista->set('titulo', 'Lista de checkin');
+//            return $this->vista->imprimir();
+//        } catch (Exception $exc) {
+//            echo 'Error de aplicacion: ' . $exc->getMessage();
+//        }
+//    }
+        public function index() {
         try {
-            $datos = $this->modelo->leerCheckin();
+          $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
+            $datos = $this->modelo->leerCheckin2($cod_usuario);
             $this->vista->set('checkin', $datos);
             $this->vista->set('titulo', 'Lista de checkin');
             return $this->vista->imprimir();
         } catch (Exception $exc) {
             echo 'Error de aplicacion: ' . $exc->getMessage();
         }
-    }
+  }
     
      public function detalle($num_checkin) {
         try {

@@ -14,9 +14,9 @@
         <div id="encabezado"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Logo.gif" width="965" height="266" alt="logo" /></div>
         <div id="menu"><a href="/HOTEL_CLUB_PREMIUM/Principal/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Bienvenidos.gif" alt="Bienvenidos" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Administrador.gif" alt="Administrador" width="193" height="59" border="0" /></a><a href="/HOTEL_CLUB_PREMIUM/usuario/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Usuarios.gif" alt="Usuarios" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Reservas.gif" alt="Reservas" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Servicios.gif" alt="Servicios" width="193" height="59" border="0" /></a></div>
         <div id="contenido">
-      <p class="text-right" >
+     <!--   <p class="text-right" >
          
-       </p>
+       </p>-->
         <h2>INGRESO DEL CHECHIN</h2>
         <table border="1" width="500" cellspacing="0" cellpadding="0">
             <thead>
@@ -25,9 +25,9 @@
                     <th>Numero checkin</th>
                     <th>Codigo </th>
                     <th>Fecha llegada </th>
-                     <th>Fecha reserva</th>
-                      <th>Fecha  inicio</th>
-                       <th>Fecha salida</th>
+                    <th>Fecha reserva</th>
+                    <th>Fecha  inicio</th>
+                    <th>Fecha salida</th>
                         
                      
                </tr>
@@ -48,7 +48,7 @@
             </tbody>
     </table>
         <br><br>
-        <a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a>
+    <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a> </p>
         
         
         <form action="/HOTEL_CLUB_PREMIUM/Checkin/index" method="post" name="form1"  onsubmit="return CamposVacios()">

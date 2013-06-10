@@ -2,9 +2,13 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <title><?php echo $titulo; ?></title>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hotel Club Premium - Bienvenidos</title>
+<link href="/HOTEL_CLUB_PREMIUM/Css/estilo_basico.css" rel="stylesheet" type="text/css" />
+<link href="/HOTEL_CLUB_PREMIUM/Css/textos.css" rel="stylesheet" type="text/css" />
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+ </head>
+ 
     <body>
         <p>
           <?php include HOME . DS . 'includes' . DS . 'menu.php'; ?>

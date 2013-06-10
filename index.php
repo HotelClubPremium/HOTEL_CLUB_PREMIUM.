@@ -27,6 +27,7 @@ function cargadorClases(){
     require_once './MODELOS/Reserva.php';
     require_once './MODELOS/Facturacion.php'; 
     require_once './MODELOS/Tarjeta_registro.php';
+    require_once './MODELOS/Checkin.php'; 
     require_once './controlador/Controlador.php';
     require_once './controlador/Usuariocontrol.php';
     require_once './controlador/Habitacioncontrol.php';
@@ -34,6 +35,7 @@ function cargadorClases(){
     require_once './controlador/Facturacioncontrol.php';
     require_once './controlador/Principalcontrol.php';
     require_once './controlador/Tarjeta_registrocontrol.php';
+    require_once './controlador/Checkincontrol.php';
     require_once './utiles/class.phpmailer.php';
     require_once './utiles/class.pop3.php';
     require_once './utiles/class.smtp.php';

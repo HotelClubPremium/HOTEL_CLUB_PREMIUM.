@@ -15,8 +15,8 @@
                 <tr>
                    
                     <th>Numero checkin</th>
-                    <th>Codigo  cliente</th>
-                    <th>Fecha de la lleg </th>
+                    <th>Codigo </th>
+                    <th>Fecha llegada </th>
                      <th>Fecha reserva</th>
                       <th>Fecha  inicio</th>
                        <th>Fecha salida</th>
@@ -43,7 +43,7 @@
         <a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a>
         
         
-        <form action="/HOTEL_CLUB_PREMIUM/Checkin/buscar" method="post" name="form1"  onsubmit="return CamposVacios()">
+        <form action="/HOTEL_CLUB_PREMIUM/Checkin/index" method="post" name="form1"  onsubmit="return CamposVacios()">
             <table width="416" border="1" cellspacing="0" cellpadding="2">
                 <tr>
                     <th width="197" scope="row">Codigo De usuario</th>

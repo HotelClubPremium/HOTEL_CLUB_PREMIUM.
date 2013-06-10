@@ -132,6 +132,7 @@ class Reserva  extends Modelo {
         $fecha_salida= $user->getFecha_salida();
         $fecha_reserva=  date("Y-m-d");
         $sql = "INSERT INTO reservas (num_habitacion,fecha_inicio,fecha_salida,fecha_reserva,cod_usuario) VALUES ($num_habitacion,'".$fecha_inicio."','".$fecha_salida."','".$fecha_reserva."','$cod_usuario')";
+        $sql = "INSERT INTO checkin (fecha_inicio,fecha_salida,fecha_reserva,cod_usuario) VALUES ('".$fecha_inicio."','".$fecha_salida."','".$fecha_reserva."','$cod_usuario')";
         $this->__setSql($sql);
          $this->ejecutar($this->getParametros($user));           
     }

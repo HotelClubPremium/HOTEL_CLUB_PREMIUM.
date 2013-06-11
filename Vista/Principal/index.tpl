@@ -16,7 +16,7 @@
  <div id="contenido">
     <div id="texto">
       <h1 align="justify">Bienvenidos </h1>
-      <p align="justify"> al   compromiso de nuestro equipo  de trabajo y con el fin  de garantizar a    nuestros clientes altos estándares de calidad y satisfacción plena de   nuestros  productos y servicios contamos una  categorización de 4 estrellas.</p>
+      <p align="justify"> Al compromiso de nuestro equipo  de trabajo y con el fin  de garantizar a    nuestros clientes altos estándares de calidad y satisfacción plena de   nuestros  productos y servicios contamos una  categorización de 4 estrellas.</p>
 <p align="justify">Durante su trayectoria se ha distinguido  por   su excelente servicio al cliente; contamos con un gran equipo de trabajo    que refleja el calor humano que predomina en la gente de nuestra   región,  estamos seguros de hacer de su visita, un momento único y   placentero,  ofreciéndole a usted el sitio ideal para disfrutar de su   viaje de negocios o  turismo. </p>
     </div>
     <div id="imagenes"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/animacion.gif" width="362" height="350" alt="habitaciones" /></div>

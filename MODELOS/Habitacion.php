@@ -15,7 +15,7 @@ class Habitacion  extends Modelo {
     private $tipo;
     private $precio;
     private $disponibilidad;
-   
+    private $imagen;
     function __construct() {
          parent::__construct();
         
@@ -34,8 +34,10 @@ class Habitacion  extends Modelo {
         }
         if (array_key_exists('disponibilidad', $props)) {
             $user->setDisponibilidad($props['disponibilidad']);
-        }
-       
+          }
+       if (array_key_exists('imagen', $props)) {
+            $user->setDisponibilidad($props['imagen']);
+          }
     }
 
       private function getParametros(Habitacion $habitacion) {
@@ -43,14 +45,22 @@ class Habitacion  extends Modelo {
             ':num_habitacion' => $habitacion->getNum_habitacion(),
             ':tipo' => $habitacion->getTipo(),
             ':precio' => $habitacion->getPrecio(),
-            ':disponibilidad' => $habitacion->getDisponibilidad(), 
+            ':disponibilidad' => $habitacion->getDisponibilidad(),
+            ':imagen' => $habitacion->getImagen(), 
             
         );
         return $parametros;
     }
     
-    
-    public function getNum_habitacion() {
+    public function getImagen() {
+        return $this->imagen;
+    }
+
+    public function setImagen($imagen) {
+        $this->imagen = $imagen;
+    }
+
+        public function getNum_habitacion() {
         return $this->num_habitacion;
     }
 
@@ -89,14 +99,14 @@ class Habitacion  extends Modelo {
         $tipo= $user->getTipo();
         $precio= $user->getPrecio();
         $disponibilidad= $user->getDisponibilidad();
-        
-        $sql = "INSERT INTO habitacion (num_habitacion,tipo,precio,disponibilidad) VALUES ('$num_habitacion','$tipo','$precio','$disponibilidad')";
+        $imagen=$user->getImagen();
+        $sql = "INSERT INTO habitacion (num_habitacion,tipo,precio,disponibilidad,imagen) VALUES ('$num_habitacion','$tipo','$precio','$disponibilidad','$imagen')";
         $this->__setSql($sql);
         $this->ejecutar($this->getParametros($user));
     }
 
     public function leerHabitacion() {
-        $sql = "SELECT num_habitacion,tipo,precio,disponibilidad FROM habitacion";
+        $sql = "SELECT num_habitacion,tipo,precio,disponibilidad,imagen FROM habitacion";
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $habitaciones = array();

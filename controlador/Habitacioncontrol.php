@@ -61,17 +61,20 @@ class Habitacioncontrol extends Controlador  {
             $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : NULL;
             $precio = isset($_POST['precio']) ? $_POST['precio'] : NULL;
             $disponibilidad = isset($_POST['disponibilidad']) ? $_POST['disponibilidad'] : NULL;
-            //TODO: Si se hace validacion de datos mandaria mensaje de datos no validos 
+            
             try {
+//            
+                $filename = $_FILES['foto']['tmp_name'];
+                $foto = fopen($filename, 'rb');
                 $habitacion = new Habitacion();
-               
                 $habitacion->setTipo($tipo);
                 $habitacion->setPrecio($precio);
                 $habitacion->setDisponibilidad($disponibilidad);
                 $habitacion->setNum_habitacion($num_habitacion);
+                $habitacion->setImagen($foto);
                 $habitacion->crearHabitacion($habitacion);
-                $this->vista->set('titulo', 'Datos almacenados');
-                $this->vista->set('mensaje', 'Se ha guardado la informacion de manera satisfactoria');
+                $this->vista->set('titulo', $foto);
+                $this->vista->set('mensaje', 'La Informacion ha sido guardada satisfactoriamente');
             } catch (Exception $ex) {
                 $this->vista->set('titulo', 'Error');
                 $this->vista->set('mensaje', 'Error al guardar los datos: ' . $ex->getMessage());

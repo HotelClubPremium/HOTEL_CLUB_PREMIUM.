@@ -21,7 +21,7 @@
                     <th>Tipo</th>
                     <th>Precio</th>
                     <th>Disponibilidad</th>
-                    
+                    <th>Imagen</th>
                 </tr>
           </thead>
             <tbody>
@@ -32,6 +32,7 @@
                     <td><?php echo $user->getTipo();?></td>
                     <td><?php echo $user->getPrecio();?></td>
                     <td><?php echo $user->getDisponibilidad();?></td>
+                    <td><?php echo $user->getImagen();?></td>
                         
                 </tr>
                 <?php } ?>

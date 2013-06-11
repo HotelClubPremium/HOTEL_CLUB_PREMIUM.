@@ -73,7 +73,7 @@ class Habitacioncontrol extends Controlador  {
                 $habitacion->setNum_habitacion($num_habitacion);
                 $habitacion->setImagen($foto);
                 $habitacion->crearHabitacion($habitacion);
-                $this->vista->set('titulo', $foto);
+                $this->vista->set('titulo', 'Datos Guardados');
                 $this->vista->set('mensaje', 'La Informacion ha sido guardada satisfactoriamente');
             } catch (Exception $ex) {
                 $this->vista->set('titulo', 'Error');

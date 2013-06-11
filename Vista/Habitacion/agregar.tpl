@@ -14,7 +14,7 @@
          <div id="menu"><a href="/HOTEL_CLUB_PREMIUM/Principal/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Bienvenidos.gif" alt="Bienvenidos" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Administrador.gif" alt="Administrador" width="193" height="59" border="0" /></a><a href="/HOTEL_CLUB_PREMIUM/usuario/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Usuarios.gif" alt="Usuarios" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Reservas.gif" alt="Reservas" width="193" height="59" border="0" /></a><a href="/HOTEL_CLUB_PREMIUM/reserva/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Servicios.gif" alt="Servicios" width="193" height="59" border="0" /></a></div>
             <div id="contenido">
         <h2 align="center">HABITACIONES</h2>
-        <form action="/HOTEL_CLUB_PREMIUM/Habitacion/guardar" method="post" name="form1"  onsubmit="return CamposVacios()">
+        <form action="/HOTEL_CLUB_PREMIUM/Habitacion/guardar" method="post" name="form1" enctype="multipart/form-data" onsubmit="return CamposVacios()">
             <table width="416" border="0" cellspacing="0" cellpadding="2" align="center">
                 <tr>
                     <th width="197" scope="row">Numhabitacion</th>
@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Foto</th>
-                  <td><input type="file" name="foto" id="foto"></td>
+                  <td><input type="file" name="foto" id="foto" accept="image/*" ></td>
                 </tr>
                 <tr>
                     <th scope="row"></th>

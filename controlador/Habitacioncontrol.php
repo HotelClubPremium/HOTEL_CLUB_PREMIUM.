@@ -64,14 +64,13 @@ class Habitacioncontrol extends Controlador  {
             
             try {
 //            
-                $filename = $_FILES['foto']['tmp_name'];
-                $foto = fopen($filename, 'rb');
+                
                 $habitacion = new Habitacion();
                 $habitacion->setTipo($tipo);
                 $habitacion->setPrecio($precio);
                 $habitacion->setDisponibilidad($disponibilidad);
                 $habitacion->setNum_habitacion($num_habitacion);
-                $habitacion->setImagen($foto);
+                
                 $habitacion->crearHabitacion($habitacion);
                 $this->vista->set('titulo', 'Datos Guardados');
                 $this->vista->set('mensaje', 'La Informacion ha sido guardada satisfactoriamente');

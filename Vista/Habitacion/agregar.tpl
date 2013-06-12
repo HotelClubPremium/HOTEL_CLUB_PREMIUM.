@@ -32,11 +32,7 @@
                     <th scope="row">Disponibilidad</th>
                     <td><input name="disponibilidad" id="disponibilidad" type="text" onkeypress="return soloLetras(event)"/></td>
                 </tr>
-                <tr>
-                  <th scope="row">Foto</th>
-                  <td><input type="file" name="foto" id="foto" accept="image/*" ></td>
-                </tr>
-                <tr>
+                    <tr>
                     <th scope="row"></th>
                     <td colspan="2"><input class="btn btn-info" name="agregarhabitacion" id="agregarhabitacion" type="submit" value="Guardar" onsubmit="return CamposVacios()" /></td>
                 </tr>

@@ -43,7 +43,7 @@
                          </tr>
                          <tr>
                             <th class="text-info" scope="row">Numero de Habitacion                                                                    </th>
-                            <td><input name="num_habitacion" id="correo_electronico" type="text" /><button class="btn  btn-mini btn-primary" type="button">Habitaciones</button></td>
+                            <td><input name="num_habitacion" id="correo_electronico" type="text" /><button class="btn  btn-mini btn-primary" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Habitacion/index">Habitaciones</button></td>
                          </tr>
                         <tr>
                             <th class="text-info" scope="row">Fecha de LLegada</th>

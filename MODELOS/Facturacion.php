@@ -84,6 +84,17 @@ class Facturacion   extends Modelo{
     public function setFacturacion_total($facturacion_total) {
         $this->facturacion_total = $facturacion_total;
     }
+    
+     protected function consultar($sql = null, $param = null) {
+        if ($sql == null)
+            $sql = $this->sql;
+        $this->sentencia = $this->db->prepare($sql);
+        if ($param != null)
+            $this->sentencia->execute($param);
+        $this->sentencia->execute();
+        $resultado = $this->sentencia->fetchAll();
+        return $resultado;
+    }
 
    public function crearFacturacion(Facturacion $user) {
         $numero_checkout= $user->getNumero_checkout();
@@ -108,6 +119,19 @@ class Facturacion   extends Modelo{
         }
         return $facturaciones;
     }
+     public function leerFacturacion2($numero_checkout) {
+        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total  FROM facturacion F  WHERE F.numero_checkout='$numero_checkout'";
+        $this->__setSql($sql);
+        $resultado = $this->consultar($sql);
+        $facturaciones = array();
+        foreach ($resultado as $fila) {
+            $user = new Facturacion();
+            $this->mapearfacturacion($user, $fila);
+            $facturaciones[$user->getNumero_checkout()] = $user;
+        }
+        return $facturaciones;
+    }
+    
     
     
       public function leerFacturacionporcodigo($numero_checkout) {
@@ -119,6 +143,8 @@ class Facturacion   extends Modelo{
         }
         return null;
     }
+    
+    
       
     
 

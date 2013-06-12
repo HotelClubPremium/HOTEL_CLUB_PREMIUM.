@@ -47,7 +47,7 @@
              </form>
             <p>&nbsp;</p>
             </div>
-            <div id="pie">hcp</div>
+            <div id="pie"> HOTEL CLUB PREMIUM </div>
             </div>
 </body>
 </html>

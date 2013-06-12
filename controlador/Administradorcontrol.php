@@ -25,8 +25,8 @@ class Administradorcontrol extends Controlador{
           $this->setVista('index');
           //  $this->vista->set('titulo', 'Lista de usuarios');
 //              $this->vista->set('Principal','');
-           $this->vista->set('usuarios');
-            $this->vista->set('titulo', 'Lista de usuarios');
+//           $this->vista->set('usuarios');
+//            $this->vista->set('titulo', 'Lista de usuarios');
             return $this->vista->imprimir();
         } catch (Exception $exc) {
             echo 'Error de aplicacion: ' . $exc->getMessage();

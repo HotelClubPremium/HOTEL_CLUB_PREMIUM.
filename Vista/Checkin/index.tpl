@@ -61,9 +61,13 @@
                    <tr>
                     <td colspan="2"><input class="btn btn-info" name="buscarcheckin" id="buscarcheckin" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
                 </tr>
+                
+          
             </table>
             
-            
+          <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Administrador/fuera">Cerrar Sesion</button>
+       </p>  
             
             
             

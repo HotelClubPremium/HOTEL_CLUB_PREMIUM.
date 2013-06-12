@@ -15,18 +15,15 @@
             <div id="contenido">
          
         <form action="/HOTEL_CLUB_PREMIUM/Facturacion/index" method="post" name="form1"  onsubmit="return CamposVacios()">
-            <table width="416" border="0" cellspacing="0" cellpadding="2">
-                <tr>
-                    <th width="197" scope="row">Codigo checkout </th>
-                    <td width="211"  ><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
+            <table width="500" border="0" cellspacing="0" cellpadding="2" align = "center">
+                <tr align = "center">
+                    <th align = "center" width="200" scope="row">Codigo checkout </th>
+                    <td width="250"  ><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
+                 <td colspan="2" ><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
+              
                 </tr>
                 
-                   <tr>
-                    <td colspan="2" ><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
-                </tr>
             </table>
-            
-     
         </form>
     <br><br>
             
@@ -34,15 +31,12 @@
                     <table border="2" width="550" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                          
-                  
-                        <tr>
-                           
+                        <tr>     
                     <th width="197" scope="row">Numero De checkout</th>
                     <th width="197" scope="row">Codigo usuario</th>
                     <th width="197" scope="row">Numero del servicio</th>
                     <th width="197" scope="row">Facturacion total</th>
                    
-               
                         </tr>
           </thead>
             <tbody>
@@ -73,8 +67,6 @@
                               <th width="197" scope="row">Total a pagar</th>
                                <th width="197" scope="row">Fecha salida</th>
                               
-                            
-                          
                         </tr>
           </thead>
             <tbody>

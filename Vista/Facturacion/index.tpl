@@ -13,7 +13,22 @@
         <div id="encabezado"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Logo.gif" width="965" height="266" alt="logo" /></div>
          <div id="menu"><a href="/HOTEL_CLUB_PREMIUM/Principal/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Bienvenidos.gif" alt="Bienvenidos" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Administrador.gif" alt="Administrador" width="193" height="59" border="0" /></a><a href="/HOTEL_CLUB_PREMIUM/usuario/index"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Usuarios.gif" alt="Usuarios" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Reservas.gif" alt="Reservas" width="193" height="59" border="0" /></a><a href=""><img src="/HOTEL_CLUB_PREMIUM/Imagenes/Servicios.gif" alt="Servicios" width="193" height="59" border="0" /></a></div>
             <div id="contenido">
-                            
+         
+        <form action="/HOTEL_CLUB_PREMIUM/Facturacion/index" method="post" name="form1"  onsubmit="return CamposVacios()">
+            <table width="416" border="0" cellspacing="0" cellpadding="2">
+                <tr>
+                    <th width="197" scope="row">Codigo checkout </th>
+                    <td width="211"  ><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
+                </tr>
+                
+                   <tr>
+                    <td colspan="2" ><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
+                </tr>
+            </table>
+            
+     
+        </form>
+    <br><br>
             
                     <h2 align="center"> INFORMACION DEL CHECKOUT </h2>
                     <table border="2" width="550" cellspacing="0" cellpadding="0" align="center">
@@ -86,18 +101,17 @@
                     <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                         <tr>
-                            <th></th>
-                             <th>Numero de habitacion</th>
-                            <th>Tipo habitacion</th>
-                            <th>Precio</th>
-                   
+                           
+                             <th width="197" scope="row">Numero de habitacion</th>
+                              <th width="197" scope="row">Tipo habitacion</th>
+                               <th width="197" scope="row">Precio</th>
+                             
                         </tr>
           </thead>
             <tbody>
                 <?php foreach ($facturacion as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>">
-                      <td><?php echo $user->getNum_habitacion();?></td> 
+                    <td><?php echo $user->getNum_habitacion();?></td> 
                       <td><?php echo $user->getTipo();?></td> 
                       <td><?php echo $user->getPrecio();?></td> 
                       
@@ -107,23 +121,7 @@
             </tbody>
     </table>
     
-        <br><br>
-             <br><br>
-    <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Facturacion/agregar">NUEVA FACTURACION</a> </p>
         
-        
-        <form action="/HOTEL_CLUB_PREMIUM/Facturacion/index" method="post" name="form1"  onsubmit="return CamposVacios()">
-            <table width="416" border="0" cellspacing="0" cellpadding="2">
-                <tr>
-                    <th width="197" scope="row">Codigo checkout </th>
-                    <td width="211"  ><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
-                </tr>
-                
-                   <tr>
-                    <td colspan="2" ><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
-                </tr>
-            </table>
-     
-        </form>
+
     </body>
 </html>

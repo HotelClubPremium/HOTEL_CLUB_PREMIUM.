@@ -63,6 +63,30 @@ class Facturacion   extends Modelo{
             $user->setNum_habitacion($props['num_habitacion']);
         }
        
+        
+        
+        if (array_key_exists('num_reserva', $props)) {
+            $user->setNum_reserva($props['num_reserva']);
+        }
+
+        if (array_key_exists('dias_reservas', $props)) {
+            $user->setDias_reserva($props['dias_reservas']);
+        }
+
+        if (array_key_exists('fecha_inicio', $props)) {
+            $user->setFecha_inicio($props['fecha_inicio']);
+        }
+        if (array_key_exists('fecha_reserva', $props)) {
+            $user->setFecha_reserva($props['fecha_reserva']);
+        }
+        if (array_key_exists('total_pagar', $props)) {
+            $user->setTotal_pagar($props['total_pagar']);
+            
+        }if (array_key_exists('fecha_salida', $props)) {
+            $user->setFecha_inicio($props['fecha_salida']);
+        }
+
+        
        
     }
 
@@ -74,6 +98,17 @@ class Facturacion   extends Modelo{
             ':facturacion_total' => $facturacion->getFacturacion_total(),
              ':cod_usuario' => $facturacion->getCod_usuario(),
              ':num_habitacion' => $facturacion->getNum_habitacion(),
+            
+              ':num_reserva' => $facturacion->getNum_reserva(),
+              ':dias_reserva' => $facturacion->getDias_reserva(),
+            ':fecha_inicio' => $facturacion->getFecha_inicio(),
+            ':fecha_reserva' => $facturacion->getFecha_reserva(),
+            ':total_pagar' => $facturacion->getTotal_pagar(),
+            ':fecha_salida' => $facturacion->getFecha_salida(),
+            
+              ':num_habitacion2' => $facturacion->getNum_habitacion2(),
+               ':tipo' => $facturacion->getTipo(),
+               ':precio' => $facturacion->getPrecio(),
               );
         return $parametros;
     }

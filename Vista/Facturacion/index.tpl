@@ -25,9 +25,21 @@
                             <th>Codigo del cliente</th>
                             <th>Numero del servicio</th>
                             <th>Facturacion total</th>
-                             <th>codigo usuario</th>
-                            <th>NUMERO DE HABITACION</th>
-                    
+                            <th>Codigo usuario </th>
+                             <th>Numero de habitacion</th>
+                            
+                             <th>Numero de reserva</th>
+                            <th>Dias reservados</th>
+                            <th>Fecha inicio</th>
+                            <th>Fecha realizo reserva</th>
+                            <th>Total a pagar</th>
+                            <th>Fecha salida</th>
+                            
+                            <th>Numero de habitacion</th>
+                            <th>Tipo habitacion</th>
+                            <th>Precio</th>
+       
+                                               
                         </tr>
           </thead>
             <tbody>
@@ -39,10 +51,7 @@
                     <td><?php echo $user->getNumero_servicio();?></td>
                     <td><?php echo $user->getFacturacion_total();?></td>
                    <td><?php echo $user->getCod_usuario();?></td>
-                    <td><?php echo $user->getNum_habitacion();?></td>
-                   
-           
-                                        
+                    <td><?php echo $user->getNum_habitacion();?></td>     
                 </tr>
                 <?php } ?>
             </tbody>
@@ -56,11 +65,11 @@
             <table width="416" border="0" cellspacing="0" cellpadding="2">
                 <tr>
                     <th width="197" scope="row">Codigo checkout </th>
-                    <td width="211"><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
+                    <td width="211"  ><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
                 </tr>
                 
                    <tr>
-                    <td colspan="2"><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
+                    <td colspan="2" ><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
                 </tr>
             </table>
             

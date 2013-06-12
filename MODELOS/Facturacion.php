@@ -146,7 +146,7 @@ class Facturacion   extends Modelo{
         return $facturaciones;
     }
      public function leerFacturacion2($numero_checkout) {
-        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.num_reserva,R.num_habitacion,R.dias_reserva,R.fecha_inicio  FROM facturacion F,reservas R  WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=F.codigo_cliente";
+        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.num_reserva,R.num_habitacion,R.dias_reserva,R.fecha_inicio,R.fecha_reserva,R.total_pagar,R.fecha_salida,H.num_habitacion,H.tipo,h.precio  FROM facturacion F,reservas R,habitacion H WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=F.codigo_cliente AND num.habitacion = R.num_habitacion";
         
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);

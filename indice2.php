@@ -14,7 +14,7 @@ function cargadorClases(){
      include './MODELOS/Servicio.php';
       include './MODELOS/Facturacion.php';
       include './MODELOS/Tarjeta_registro.php';
-    
+      include './MODELOS/Administrador.php';
 }
 
 spl_autoload_register(cargadorClases);

@@ -14,16 +14,28 @@ class Facturacioncontrol extends Controlador{
         $this->setModelo($modelo);
     }
 
+//    public function index() {
+//        try {
+//            $datos = $this->modelo->leerFacturacion();
+//            $this->vista->set('facturacion', $datos);
+//            $this->vista->set('titulo', 'Lista de facturacion');
+//            return $this->vista->imprimir();
+//        } catch (Exception $exc) {
+//            echo 'Error de aplicacion: ' . $exc->getMessage();
+//        }
+//    }
+    
     public function index() {
         try {
-            $datos = $this->modelo->leerFacturacion();
+          $numero_checkout = isset($_POST['numero_checkout']) ? $_POST['numero_checkout'] : NULL;
+            $datos = $this->modelo->leerFacturacionporcodigo($numero_checkout);
             $this->vista->set('facturacion', $datos);
             $this->vista->set('titulo', 'Lista de facturacion');
             return $this->vista->imprimir();
         } catch (Exception $exc) {
             echo 'Error de aplicacion: ' . $exc->getMessage();
         }
-    }
+  }
     
     
     

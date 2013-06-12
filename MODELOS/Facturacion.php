@@ -83,7 +83,7 @@ class Facturacion   extends Modelo{
             $user->setTotal_pagar($props['total_pagar']);
             
         }if (array_key_exists('fecha_salida', $props)) {
-            $user->setFecha_inicio($props['fecha_salida']);
+            $user->setFecha_salida($props['fecha_salida']);
         }
         
         
@@ -282,7 +282,7 @@ class Facturacion   extends Modelo{
         return $facturaciones;
     }
      public function leerFacturacion2($numero_checkout) {
-        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.num_reserva,R.num_habitacion,R.dias_reserva,R.fecha_inicio,R.fecha_reserva,R.total_pagar,R.fecha_salida,H.num_habitacion,H.tipo,h.precio  FROM facturacion F,reservas R,habitacion H WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=F.codigo_cliente AND num.habitacion = R.num_habitacion";
+        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.cod_usuario,R.num_reserva,R.num_habitacion,R.dias_reserva,R.fecha_inicio,R.fecha_reserva,R.total_pagar,R.fecha_salida,H.num_habitacion,H.tipo,H.precio  FROM facturacion F,reservas R,habitacion H WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=F.codigo_cliente AND H.num_habitacion = R.num_habitacion";
         
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);

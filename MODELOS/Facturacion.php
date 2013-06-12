@@ -41,6 +41,12 @@ class Facturacion   extends Modelo{
         if (array_key_exists('facturacion_total', $props)) {
             $user->setFacturacion_total($props['facturacion_total']);
         }
+        if (array_key_exists('cod_usuario', $props)) {
+            $user->setCod_usuario($props['cod_usuario']);
+        }
+        if (array_key_exists('num_habitacion', $props)) {
+            $user->setNum_habitacion($props['num_habitacion']);
+        }
        
        
     }
@@ -51,6 +57,8 @@ class Facturacion   extends Modelo{
             ':codigo_cliente' => $facturacion->getCodigo_cliente(),
             ':numero_servicio' => $facturacion->getNumero_servicio(),
             ':facturacion_total' => $facturacion->getFacturacion_total(),
+             ':cod_usuario' => $facturacion->getCod_usuario(),
+             ':num_habitacion' => $facturacion->getNum_habitacion(),
               );
         return $parametros;
     }
@@ -138,7 +146,7 @@ class Facturacion   extends Modelo{
         return $facturaciones;
     }
      public function leerFacturacion2($numero_checkout) {
-        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.cod_usuario,R.num_habitacion  FROM facturacion F,reservas R  WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=1";
+        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.num_reserva,R.num_habitacion,R.dias_reserva,R.fecha_inicio  FROM facturacion F,reservas R  WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=F.codigo_cliente";
         
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);

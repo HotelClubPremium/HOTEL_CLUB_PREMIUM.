@@ -19,6 +19,32 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `hotelclubpremium`
 --
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administrador`
+--
+
+CREATE TABLE IF NOT EXISTS `administrador` (
+  `cod_usuario` varchar(45) NOT NULL,
+  `clave` varchar(45) NOT NULL,
+  PRIMARY KEY (`cod_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`cod_usuario`, `clave`) VALUES
+('12346', 'miguelpalomino'),
+('12347', 'carlospitre'),
+('222', '222'),
+('9211', '825bbf728c83b922425f9cb9f6f6ef4bbacb9993');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 -- --------------------------------------------------------
 

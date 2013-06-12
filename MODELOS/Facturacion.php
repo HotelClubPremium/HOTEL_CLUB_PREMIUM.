@@ -19,7 +19,8 @@ class Facturacion   extends Modelo{
     private $codigo_cliente;
     private $numero_servicio;
     private $facturacion_total;
-    
+    private $cod_usuario;
+    private $num_habitacion;    
     
     function __construct() {
          parent::__construct();
@@ -53,6 +54,8 @@ class Facturacion   extends Modelo{
               );
         return $parametros;
     }
+    
+    
     public function getNumero_checkout() {
         return $this->numero_checkout;
     }
@@ -83,6 +86,21 @@ class Facturacion   extends Modelo{
 
     public function setFacturacion_total($facturacion_total) {
         $this->facturacion_total = $facturacion_total;
+    }
+    
+    public function getCod_usuario() {
+        return $this->cod_usuario;
+    }
+
+    public function setCod_usuario($cod_usuario) {
+        $this->cod_usuario = $cod_usuario;
+    }
+    public function getNum_habitacion() {
+        return $this->num_habitacion;
+    }
+
+    public function setNum_habitacion($num_habitacion) {
+        $this->num_habitacion = $num_habitacion;
     }
     
      protected function consultar($sql = null, $param = null) {
@@ -120,7 +138,8 @@ class Facturacion   extends Modelo{
         return $facturaciones;
     }
      public function leerFacturacion2($numero_checkout) {
-        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total  FROM facturacion F  WHERE F.numero_checkout='$numero_checkout'";
+        $sql = "SELECT F.numero_checkout,F.codigo_cliente,F.numero_servicio,F.facturacion_total,R.cod_usuario,R.num_habitacion  FROM facturacion F,reservas R  WHERE F.numero_checkout='$numero_checkout' AND R.cod_usuario=1";
+        
         $this->__setSql($sql);
         $resultado = $this->consultar($sql);
         $facturaciones = array();

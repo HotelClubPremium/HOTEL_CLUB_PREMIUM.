@@ -45,7 +45,7 @@
     </table>
         <br><br>
         <p id="button-style" align="center">
-       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Facturacion/agregar">AGREGAR FACTURACION</button>
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Facturacion/agregar"> FACTURACIONES</button>
        </p>
        </div>
   <div id="pie">hcp</div>

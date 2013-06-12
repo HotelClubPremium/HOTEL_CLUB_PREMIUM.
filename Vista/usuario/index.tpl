@@ -59,7 +59,8 @@
        </p>
        <p id="button-style" align="center">
        <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/informacion">CONFIGURACION</button>
-       </p>       
+       </p>
+       
             
      <td><?php echo "Bienvenido ".$_SESSION['usuario.id'] ;?></td>
    <!-- <td><?php echo " ".$_SESSION['usuario2.id'] ;?></td> -->

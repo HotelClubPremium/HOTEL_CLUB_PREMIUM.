@@ -186,6 +186,22 @@ public function setClave($clave) {
         }
         return $usuario;
     }
+    
+      public function leerUsuarioPorClave2($usuario, $clave) {
+        //TODO: Hacer las funciones de encriptacion en php 
+        //$clave = encriptar_sha($clave)
+
+        $sql = "SELECT * FROM administrador WHERE cod_usuario=? AND clave=SHA(?)";
+        $param = array($usuario, $clave);
+        $this->__setSql($sql);
+        $res = $this->consultar($sql, $param);
+        $usuario = NULL;
+        foreach ($res as $fila) {
+            $usuario = new Usuario();
+            $this->mapearUsuario($usuario, $fila);
+        }
+        return $usuario;
+    }
 public function leerUsuarioPorMail($cod_usuario, $correo_electronico) {
         //TODO: Hacer las funciones de encriptacion en php 
         //$clave = encriptar_sha($clave)

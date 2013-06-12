@@ -28,7 +28,7 @@ class Facturacioncontrol extends Controlador{
     public function index() {
         try {
           $numero_checkout = isset($_POST['numero_checkout']) ? $_POST['numero_checkout'] : NULL;
-            $datos = $this->modelo->leerFacturacionporcodigo($numero_checkout);
+            $datos = $this->modelo->leerFacturacion2($numero_checkout);
             $this->vista->set('facturacion', $datos);
             $this->vista->set('titulo', 'Lista de facturacion');
             return $this->vista->imprimir();
@@ -60,6 +60,7 @@ class Facturacioncontrol extends Controlador{
         $this->vista->set('titulo', 'Agregar Facturacion');
         return $this->vista->imprimir();
     }
+    
     
     
     

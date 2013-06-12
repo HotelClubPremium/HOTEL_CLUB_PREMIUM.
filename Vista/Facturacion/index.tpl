@@ -16,7 +16,7 @@
                             
                 <p class="text-right" >
                            </p>
-                    <h2 align="center">FACTURACION</h2>
+                    <h2 align="center"> FACTURACIONES </h2>
                     <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                         <tr>
@@ -25,6 +25,8 @@
                             <th>Codigo del cliente</th>
                             <th>Numero del servicio</th>
                             <th>Facturacion total</th>
+                             <th>codigo usuario</th>
+                            <th>NUMERO DE HABITACION</th>
                     
                         </tr>
           </thead>
@@ -36,6 +38,9 @@
                     <td><?php echo $user->getCodigo_cliente();?></td>
                     <td><?php echo $user->getNumero_servicio();?></td>
                     <td><?php echo $user->getFacturacion_total();?></td>
+                   <td><?php echo $user->getCod_usuario();?></td>
+                    <td><?php echo $user->getNum_habitacion();?></td>
+                   
            
                                         
                 </tr>
@@ -44,18 +49,18 @@
     </table>
         <br><br>
              <br><br>
-    <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a> </p>
+    <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Facturacion/agregar">NUEVA FACTURACION</a> </p>
         
         
-        <form action="/HOTEL_CLUB_PREMIUM/Checkin/index" method="post" name="form1"  onsubmit="return CamposVacios()">
+        <form action="/HOTEL_CLUB_PREMIUM/Facturacion/index" method="post" name="form1"  onsubmit="return CamposVacios()">
             <table width="416" border="0" cellspacing="0" cellpadding="2">
                 <tr>
-                    <th width="197" scope="row">Codigo De usuario</th>
-                    <td width="211"><input name="cod_usuario" id="cod_usuario" type="text" onkeypress="return solonumeros(event)" /></td>
+                    <th width="197" scope="row">Codigo checkout </th>
+                    <td width="211"><input name="numero_checkout" id="numero_checkout" type="text" onkeypress="return solonumeros(event)" /></td>
                 </tr>
                 
                    <tr>
-                    <td colspan="2"><input class="btn btn-info" name="buscarcheckin" id="buscarcheckin" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
+                    <td colspan="2"><input class="btn btn-info" name="buscarcheckout" id="buscarcheckout" type="submit" value="buscar" onsubmit="return CamposVacios()" /></td>
                 </tr>
             </table>
             

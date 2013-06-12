@@ -48,8 +48,9 @@
                     <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                         <tr>
+                              <th></th>
+                               <th>Numero de reserva</th>
                              <th>Numero de habitacion</th>
-                            <th>Numero de reserva</th>
                             <th>Dias reservados</th>
                             <th>Fecha inicio</th>
                             <th>Fecha realizo reserva</th>
@@ -63,7 +64,7 @@
                 <tr>
                     <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>">
                     <td><?php echo $user->getNum_reserva();?></td>  
-                      <td><?php echo $user->getNum_habitacion();?></td>     
+                       <td><?php echo $user->getNum_habitacion();?></td>     
                      <td><?php echo $user->getDias_reserva();?></td>   
                       <td><?php echo $user->getFecha_inicio();?></td>
                       <td><?php echo $user->getFecha_reserva();?></td>
@@ -82,6 +83,7 @@
                     <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                         <tr>
+                            <th></th>
                              <th>Numero de habitacion</th>
                             <th>Tipo habitacion</th>
                             <th>Precio</th>

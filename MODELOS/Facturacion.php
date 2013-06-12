@@ -85,6 +85,18 @@ class Facturacion   extends Modelo{
         }if (array_key_exists('fecha_salida', $props)) {
             $user->setFecha_inicio($props['fecha_salida']);
         }
+        
+        
+        if (array_key_exists('num_habitacion2', $props)) {
+            $user->setNum_habitacion2($props['num_habitacion2']);
+        }
+        
+        if (array_key_exists('tipo', $props)) {
+            $user->setTipo ($props['tipo']);
+        }
+        if (array_key_exists('precio', $props)) {
+            $user->setPrecio ($props['precio']);
+        }
 
         
        

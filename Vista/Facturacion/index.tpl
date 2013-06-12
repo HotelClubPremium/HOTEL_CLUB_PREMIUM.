@@ -39,7 +39,6 @@
                             <th>Tipo habitacion</th>
                             <th>Precio</th>
        
-                                               
                         </tr>
           </thead>
             <tbody>
@@ -51,7 +50,21 @@
                     <td><?php echo $user->getNumero_servicio();?></td>
                     <td><?php echo $user->getFacturacion_total();?></td>
                    <td><?php echo $user->getCod_usuario();?></td>
-                    <td><?php echo $user->getNum_habitacion();?></td>     
+                   <td><?php echo $user->getNum_habitacion();?></td>    
+                   
+                   
+                    <td><?php echo $user->getNum_reserva();?></td>   
+                     <td><?php echo $user->getDias_reserva();?></td>   
+                      <td><?php echo $user->getFecha_inicio();?></td>
+                      <td><?php echo $user->getFecha_reserva();?></td>
+                      <td><?php echo $user->getTotal_pagar();?></td>
+                      <td><?php echo $user->getFecha_salida();?></td>
+                      
+                      <td><?php echo $user->getNum_habitacion2();?></td> 
+                      <td><?php echo $user->getTipo();?></td> 
+                      <td><?php echo $user->getPrecio();?></td> 
+                      
+                      
                 </tr>
                 <?php } ?>
             </tbody>

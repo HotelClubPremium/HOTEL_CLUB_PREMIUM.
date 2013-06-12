@@ -20,9 +20,14 @@
        </p> 
        
        <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Usuario/index">Lista Usuario</button>
+       </p>
+       <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/habitacion/index">Lista Habitacion</button>
+       </p>
+     <p id="button-style" align="center">
        <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Administrador/fuera">Cerrar Sesion</button>
        </p>
-     
      
      
     

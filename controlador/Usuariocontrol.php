@@ -154,6 +154,28 @@ public function guardar() {
             return $this->vista->imprimir();
         }
     }
+      public function entrar2() {
+        if (isset($_POST['enviar'])) {
+            $cod_usuario = isset($_POST['cod_usuario']) ? $_POST['cod_usuario'] : NULL;
+            $clave = isset($_POST['clave']) ? $_POST['clave'] : NULL;
+            $usuario = $this->modelo->leerUsuarioPorClave2($cod_usuario, $clave);
+            if ($usuario == NULL) {
+                $this->vista->set('mensaje', 'No esta registrado');
+                return $this->vista->imprimir();
+            }
+            $this->vista->set('mensaje', 'Entrar a la aplicacion');
+            //MANEJO DE SESIONES
+            session_start();
+            $_SESSION['usuario.id'] = $usuario->getNom_usuario();
+            $_SESSION['usuario2.id'] =$usuario->getApe_usuario();
+            $_SESSION['usuario3.id'] =$usuario->getFecha_nacimiento();
+            $_SESSION['usuario4.id'] =$usuario->getsex_usuario();
+            $_SESSION['usuario5.id'] =$usuario->getCorreo_electronico();
+            $_SESSION['usuario.id'] =$usuario->getCod_usuario();
+            return $this->vista->imprimir();
+        }
+    }
+    
     
     
     public function olvidoclave() {

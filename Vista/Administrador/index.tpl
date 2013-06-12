@@ -14,6 +14,14 @@
  <div id="contenido">
      
      
+      <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Checkin/index">chekin</button>
+       </p> 
+       
+       <p id="button-style" align="center">
+       <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Administrador/fuera">Cerrar Sesion</button>
+       </p>
+     
      
      
     

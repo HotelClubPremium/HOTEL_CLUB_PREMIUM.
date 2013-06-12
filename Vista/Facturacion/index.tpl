@@ -16,17 +16,18 @@
                             
             
                     <h2 align="center"> INFORMACION DEL CHECKOUT </h2>
-                    <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
+                    <table border="2" width="550" cellspacing="0" cellpadding="0" align="center">
                      <thead>
+                         
+                  
                         <tr>
+                           
+                    <th width="197" scope="row">Numero De checkout</th>
+                    <th width="197" scope="row">Codigo usuario</th>
+                    <th width="197" scope="row">Numero del servicio</th>
+                    <th width="197" scope="row">Facturacion total</th>
                    
-                            <th>Numero del checkout</th>
-                            <th>Codigo del cliente</th>
-                            <th>Numero del servicio</th>
-                            <th>Facturacion total</th>
-                            <th>Codigo usuario </th>
-                             
-                       
+               
                         </tr>
           </thead>
             <tbody>
@@ -37,34 +38,35 @@
                     <td><?php echo $user->getCodigo_cliente();?></td>
                     <td><?php echo $user->getNumero_servicio();?></td>
                     <td><?php echo $user->getFacturacion_total();?></td>
-                   <td><?php echo $user->getCod_usuario();?></td>
-                      
+                   
                 </tr>
                 <?php } ?>
             </tbody>
     </table>
-                    
+            <br><br>
+             <br><br>        
                     <h2 align="center"> INFORMACION RESERVA </h2>
-                    <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
+                    <table border="2" width="700" cellspacing="0" cellpadding="0" align="center">
                      <thead>
                         <tr>
-                              <th></th>
-                               <th>Numero de reserva</th>
-                             <th>Numero de habitacion</th>
-                            <th>Dias reservados</th>
-                            <th>Fecha inicio</th>
-                            <th>Fecha realizo reserva</th>
-                            <th>Total a pagar</th>
-                            <th>Fecha salida</th>
+                             
+                              <th width="197" scope="row">Numero de reserva</th>
+                              <th width="197" scope="row">Numero de habitacion</th>
+                              <th width="197" scope="row">Dias reservados</th>
+                              <th width="197" scope="row">Fecha inicio</th>
+                              <th width="197" scope="row">Fecha realizo reserva</th>
+                              <th width="197" scope="row">Total a pagar</th>
+                               <th width="197" scope="row">Fecha salida</th>
+                              
+                            
                           
                         </tr>
           </thead>
             <tbody>
                 <?php foreach ($facturacion as $user) { ?>
                 <tr>
-                    <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>">
-                    <td><?php echo $user->getNum_reserva();?></td>  
-                       <td><?php echo $user->getNum_habitacion();?></td>     
+                    <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>"><?php echo $user->getNum_reserva();?></td>  
+                     <td><?php echo $user->getNum_habitacion();?></td>     
                      <td><?php echo $user->getDias_reserva();?></td>   
                       <td><?php echo $user->getFecha_inicio();?></td>
                       <td><?php echo $user->getFecha_reserva();?></td>
@@ -78,7 +80,8 @@
                     
                     
                     </table>
-                    
+                    <br><br>
+             <br><br>
                     <h2 align="center"> INFORMACION HABITACION CLIENTE </h2>
                     <table border="2" width="500" cellspacing="0" cellpadding="0" align="center">
                      <thead>
@@ -94,7 +97,7 @@
                 <?php foreach ($facturacion as $user) { ?>
                 <tr>
                     <td><a href="/HOTEL_CLUB_PREMIUM/Facturacion/detalle/<?php echo $user->getNumero_checkout();?>">
-                      <td><?php echo $user->getNum_habitacion2();?></td> 
+                      <td><?php echo $user->getNum_habitacion();?></td> 
                       <td><?php echo $user->getTipo();?></td> 
                       <td><?php echo $user->getPrecio();?></td> 
                       

@@ -1,7 +1,7 @@
 <?php
 
 /**
-     * @author MELLADO
+     * @author MIGUEL JOSE PALOMINO CERPA
      *
      * @var declaracion de variables  para la clase facturacion.
      * 
@@ -20,7 +20,22 @@ class Facturacion   extends Modelo{
     private $numero_servicio;
     private $facturacion_total;
     private $cod_usuario;
-    private $num_habitacion;    
+    private $num_habitacion; 
+    
+        private $num_reserva; 
+        private $dias_reserva; 
+        private $fecha_inicio;
+        private $fecha_reserva;
+        private $total_pagar; 
+        private $fecha_salida;
+        
+        
+        private $num_habitacion2; 
+         private $tipo; 
+          private $precio; 
+
+    
+    
     
     function __construct() {
          parent::__construct();
@@ -62,8 +77,6 @@ class Facturacion   extends Modelo{
               );
         return $parametros;
     }
-    
-    
     public function getNumero_checkout() {
         return $this->numero_checkout;
     }
@@ -95,7 +108,7 @@ class Facturacion   extends Modelo{
     public function setFacturacion_total($facturacion_total) {
         $this->facturacion_total = $facturacion_total;
     }
-    
+
     public function getCod_usuario() {
         return $this->cod_usuario;
     }
@@ -103,6 +116,7 @@ class Facturacion   extends Modelo{
     public function setCod_usuario($cod_usuario) {
         $this->cod_usuario = $cod_usuario;
     }
+
     public function getNum_habitacion() {
         return $this->num_habitacion;
     }
@@ -110,6 +124,81 @@ class Facturacion   extends Modelo{
     public function setNum_habitacion($num_habitacion) {
         $this->num_habitacion = $num_habitacion;
     }
+
+    public function getNum_reserva() {
+        return $this->num_reserva;
+    }
+
+    public function setNum_reserva($num_reserva) {
+        $this->num_reserva = $num_reserva;
+    }
+
+    public function getDias_reserva() {
+        return $this->dias_reserva;
+    }
+
+    public function setDias_reserva($dias_reserva) {
+        $this->dias_reserva = $dias_reserva;
+    }
+
+    public function getFecha_inicio() {
+        return $this->fecha_inicio;
+    }
+
+    public function setFecha_inicio($fecha_inicio) {
+        $this->fecha_inicio = $fecha_inicio;
+    }
+
+    public function getFecha_reserva() {
+        return $this->fecha_reserva;
+    }
+
+    public function setFecha_reserva($fecha_reserva) {
+        $this->fecha_reserva = $fecha_reserva;
+    }
+
+    public function getTotal_pagar() {
+        return $this->total_pagar;
+    }
+
+    public function setTotal_pagar($total_pagar) {
+        $this->total_pagar = $total_pagar;
+    }
+
+    public function getFecha_salida() {
+        return $this->fecha_salida;
+    }
+
+    public function setFecha_salida($fecha_salida) {
+        $this->fecha_salida = $fecha_salida;
+    }
+
+    public function getNum_habitacion2() {
+        return $this->num_habitacion2;
+    }
+
+    public function setNum_habitacion2($num_habitacion2) {
+        $this->num_habitacion2 = $num_habitacion2;
+    }
+
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+    public function getPrecio() {
+        return $this->precio;
+    }
+
+    public function setPrecio($precio) {
+        $this->precio = $precio;
+    }
+
+        
+    
     
      protected function consultar($sql = null, $param = null) {
         if ($sql == null)

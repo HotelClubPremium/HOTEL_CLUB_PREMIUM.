@@ -48,7 +48,7 @@
             </tbody>
     </table>
         <br><br>
-    <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a> </p>
+   <!-- <p class="text-right" ><a href="/HOTEL_CLUB_PREMIUM/Checkin/agregar">Nueva Checkin</a> </p>-->
         
         
         <form action="/HOTEL_CLUB_PREMIUM/Checkin/index" method="post" name="form1"  onsubmit="return CamposVacios()">

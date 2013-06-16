@@ -22,12 +22,12 @@
     <div id="imagenes"><img src="/HOTEL_CLUB_PREMIUM/Imagenes/animacion.gif" width="362" height="350" alt="habitaciones" /></div>
   </div>
   
-  <p id="button-style" align="center">
+<!--  <p id="button-style" align="center">
        <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/Checkin/index">chekin</button>
        </p> 
        <p id="button-style" align="center">
        <button class="btn btn-large btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/checkin/informacion">mi informacion</button>
-       </p> 
+       </p> -->
   
   
   

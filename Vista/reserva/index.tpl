@@ -57,7 +57,9 @@
                          
                          <td colspan="5"><input  class="btn btn-info" name="agregarreserva" id="agregarreserva" type="submit" value="Hacer Reserva"/></td>
                         
-                       </table>                 
+                         
+  </table>      
+  <td ><button class="btn btn-info btn-info" type="button"><a style="color:#FFFFFF" href="/HOTEL_CLUB_PREMIUM/usuario/fuera">Cerrar Sesion</button></td>
                                          
                   
                    </form>
